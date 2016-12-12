@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+
+    <link rel="stylesheet" href="bs和js插件/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bs和js插件/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <script src="bs和js插件/jquery-3.1.0.js"></script>
+    <script src="bs和js插件/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <style>
+        header{
+            height: 40px;
+            background: linear-gradient(#e6e6e6, #f5f5f5);
+        }
+        nav{
+            height: 50px;
+            background: papayawhip;
+            margin-top: 10px;
+        }
+        section{
+            height: 450px;
+            background: skyblue;
+            margin-top: 10px;
+        }
+        footer{
+            height: 30px;
+            background: #0f0f0f;
+            margin-top: 10px;
+        }
+
+        @keyframes jay{
+            0%{font-size: 30px}
+            50%{font-size: 35px}
+            100%{font-size: 40px}
+        }
+        #jay{
+            text-shadow: #000000 2px 2px 2px;
+            animation: jay 2s 100 linear;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #canvas{
+            align-content: center;
+            left: 50%;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body onload="init();">
+
+<!-- 头部条开始 -->
+<header class="col-sm-12">
+    <span class="col-sm-2" style="margin-top: 10px;text-align: center">杰伦邀你来玩----></span>
+    <span id="jay" class="col-sm-3" style="font-size: 30px; color: gray;margin-top: 0px;"><i>Flappy Bird</i></span>
+
+    <div class="col-sm-3 col-sm-push-5 btn-group-sm">
+        <button class="btn btn-default" id="login" data-toggle="modal" data-target="#signinmodal" style="height: 30px;margin-top: 5px;">注册即送门票</button>
+        <button class="btn btn-success" id="signin" data-toggle="modal" data-target="#loginmodal" style="right: 20px; height: 30px;margin-top: 5px;">登录</button>
+    </div>
+</header>
+
+<!-- 导航栏开始 -->
+<nav class="col-sm-12 btn-group">
+    <div class="btn-group dropdown" style="top: 11px;">
+        <button class="btn-group btn-info" data-toggle="dropdown">
+            益智游戏
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">益智</li>
+            <li>快速魔方</li>
+            <li><a id="toggle">笨鸟先飞</a></li>
+            <li class="divider"></li>
+            <li>龟兔赛跑</li>
+        </ul>
+    </div>
+
+    <div class="btn-group dropdown" style="top: 11px;">
+        <button class="btn-group btn-info" data-toggle="dropdown">
+            角色扮演
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">益智</li>
+            <li>快速魔方</li>
+            <li>笨鸟先飞</li>
+            <li class="divider"></li>
+            <li>龟兔赛跑</li>
+        </ul>
+    </div>
+
+    <div class="btn-group dropdown" style="top: 11px;">
+        <button class="btn-group btn-info" data-toggle="dropdown">
+            射击游戏
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">益智</li>
+            <li>快速魔方</li>
+            <li>笨鸟先飞</li>
+            <li class="divider"></li>
+            <li>龟兔赛跑</li>
+        </ul>
+    </div>
+
+    <div class="btn-group dropdown" style="top: 11px;">
+        <button class="btn-group btn-info" data-toggle="dropdown">
+            跑酷游戏
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">益智</li>
+            <li>快速魔方</li>
+            <li>笨鸟先飞</li>
+            <li class="divider"></li>
+            <li>龟兔赛跑</li>
+        </ul>
+    </div>
+
+    <input type="text" class="col-sm-offset-4 glyphicon glyphicon-search" placeholder="请输入你想玩的游戏" style="width: 300px;margin-top: 13px;"/>
+    <button class="btn btn-info navbar-right" style="top: 11px; right: 10px;">个人中心</button>
+</nav>
+
+<!-- 中间为游戏部分 -->
+<section class="col-sm-8 col-lg-push-2" style="width: 400px;height: 600px;background-color: #fff;">
+    <canvas id="canvas" width="400px" height="600px"></canvas>
+</section>
+
+<!-- 脚部版权 -->
+<footer class="well col-sm-12" style="text-align: center; line-height: 100%;">
+    <a href="">©liang13979850665</a>
+    新版来袭，神秘嘉宾倾情助阵，敬请关注！
+</footer>
+
+<!-- 登录框模态 -->
+<div class="modal" id="loginmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true"> × </span>
+                    <span class="sr-only">close</span>
+                </button>
+                <h3>请登录</h3>
+            </div>
+            <div class="modal-body">
+                <p>登录</p><input type="text" placeholder="请输入用户名"/>
+                <p>密码</p><input type="password" placeholder="请输入密码"/>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-toggle="modal" data-target="#signin" data-dismiss="modal">注册</button>
+                <button class="btn btn-success" id="log">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 注册框模态 -->
+    <div class="modal" id="signinmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" data-target="#signin">
+                        <span aria-hidden="true"> &times;</span>
+                        <span class="sr-only">close</span>
+                    </button>
+                    <h3>请注册</h3>
+                </div>
+                <div class="modal-body">
+                    <p>用户名</p><input type="text" placeholder="请输入用户名" id="uname"/>
+                    <p>密码</p><input type="password" placeholder="请输入密码" id="pwd"/>
+                    <p>确认密码</p><input type="password" placeholder="请再次输入密码" id="checkpwd"/>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" id="surebtn">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    /* 注册框数据保存 */
+    var uname = $("#uname");
+    var pwd = $("#pwd");
+    var checkpwd = $("#checkpwd");
+    var surebtn = $("#surebtn");
+
+    var exspan = document.createElement("span");
+    var exmeter = document.createElement("meter");
+    exmeter.low = 3;
+    exmeter.high = 7;
+    exmeter.optimum = 8;
+    exmeter.max = 12;
+
+
+    pwd[0].oninput = function () {
+
+    }
+
+    checkpwd[0].oninput = function () {
+        if(this.value != pwd.val() && this.value.length != 0){
+            exspan.innerHTML = "×&nbsp;  输入密码有误，清重新输入"
+        }else{
+            exspan.innerHTML = "√&nbsp;  输入正确"
+        }
+        this.parentNode.appendChild(exspan);
+        if(checkpwd.val().length == 0){
+            this.parentNode.removeChild(exspan);
+        }
+    }
+
+    surebtn[0].onclick = function () {
+        if(uname.val().length != 0 && pwd.val().length != 0){
+            localStorage.setItem("usernames", uname.val());
+            localStorage.setItem("password", pwd.val());
+            $("#signinmodal").modal("hide");
+            alert("注册成功！");
+        }else{
+            alert("用户名和密码输入不能为空！");
+        }
+    }
+</script>
+
+<script>
+    /*var toggle = document.getElementById("toggle");
+    var scr = document.getElementById("src");
+    toggle.onclick = function () {
+        scr.setAttribute("src", "action.js");
+    }*/
+</script>
+
+<script id="scr" src="action.js"></script>
+
+
+
+</body>
+</html>

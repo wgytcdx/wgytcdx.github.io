@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮换图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        div.img_box{
+            position: relative;
+        }
+        div ul.imgs{
+            width: 400px;
+            height: 500px;
+            position: relative;
+            margin: 50px auto;
+        }
+        div ul.imgs li{
+            /*position: absolute;*/
+            transition: all 1s linear;
+        }
+        div ul.imgs li img{
+            position: absolute;
+            top: 0;
+            width: 400px;
+            height: 500px;
+        }
+        div ul.circles{
+            list-style: none;
+            position: absolute;
+            bottom: 20px;
+            margin-left: -40px;
+            left: 50%;
+            z-index: 111;
+        }
+        div ul.circles li{
+            float: left;
+            margin-right: 10px;
+        }
+        div ul.circles li a{
+            text-decoration: none;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #ffffff;
+            background-color: skyblue;
+        }
+        .active{
+            background-color: pink !important;
+        }
+        div.img_box div.arrow_box{
+            width: 400px;
+            position: absolute;
+            top: 200px;
+            margin-left: 483px;
+            z-index: 111;
+        }
+        div ul.arrows{
+
+        }
+        div ul.arrows li{
+
+        }
+        div ul.arrows li.arrows_l{
+            float: left;
+        }
+        div ul.arrows li.arrows_r{
+            float: right;
+        }
+        div ul.arrows li a{
+            display: block;
+            text-decoration: none;
+            width: 34px;
+            height: 70px;
+            text-align: center;
+            color: #fff;
+            background-color: #000;
+            opacity: 0.5;
+            font-size: 30px;
+            line-height: 70px;
+        }
+    </style>
+
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+//            console.log($("ul").children().length);
+            var liItems = $("#imgChange").children();
+            var liLen = liItems.length;
+            var circlesItems = $("#circlesChange").children();
+            var count = 0;
+            var Atimer = null;
+
+//          定义图片切换函数(即改变透明度)
+            function showImages(index){
+                for(var i = 0; i < liLen; i++){
+                    liItems[i].style.zIndex = 100 - i;
+                    liItems[i].style.opacity = '0';
+                    circlesItems[i].children[0].className = '';
+                }
+                liItems[index].style.zIndex = 100;
+                liItems[index].style.opacity = '1';
+                circlesItems[index].children[0].className = 'active';
+            }
+            showImages(0);
+//          定义自动轮播函数
+            function autoplay(){
+                if(count % 3 == 0){
+                    count = 0;
+                }
+                showImages(count);
+                count++;
+            }
+            Atimer = setInterval(autoplay, 2000);
+
+//          左右箭头的点击函数
+            var arrowsItems = $("#arrowChange").children();
+            arrowsItems[0].onclick = function () {
+                clearInterval(Atimer);
+                if(count == 0){
+                    count = 3;
+                }
+                count -= 1;
+                console.log(count);
+                showImages(count);
+                Atimer = setInterval(autoplay, 2000);
+            }
+            arrowsItems[1].onclick = function () {
+                clearInterval(Atimer);
+                autoplay();
+                Atimer = setInterval(autoplay, 2000);
+            }
+
+
+            //          定义小圆点击函数
+//            console.log(circlesItems[0].children[0]);
+            for(var i = 0; i < liLen; i++){
+                circlesItems[i].index = i;
+                circlesItems[i].onclick = function () {
+                    clearInterval(Atimer);
+                    showImages(this.index);
+                    Atimer = setInterval(autoplay, 2000);
+                }
+            }
+
+        })
+
+    </script>
+</head>
+<body>
+
+<div class="img_box">
+    <!-- 轮播的图片-->
+    <ul id="imgChange" class="imgs">
+        <li style="display: block;">
+            <img src="images/雪莉1.jpg" alt=""/>
+        </li>
+        <li style="display: block;">
+            <img src="images/雪莉2.jpg" alt=""/>
+        </li>
+        <li style="display: block;">
+            <img src="images/大海.jpg" alt=""/>
+        </li>
+    </ul>
+    <!-- 对应的小圆点-->
+    <ul id="circlesChange" class="circles">
+        <li><a href="javascript:;">1</a></li>
+        <li><a href="javascript:;">2</a></li>
+        <li><a href="javascript:;">3</a></li>
+    </ul>
+    <!-- 左右的小箭头-->
+    <div class="arrow_box">
+        <ul id="arrowChange" class="arrows">
+            <li class="arrows_l"><a href="javascript:;"> < </a></li>
+            <li class="arrows_r"><a href="javascript:;"> > </a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

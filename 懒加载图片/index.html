@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>懒加载图片</title>
+<style>
+	*{margin: 0; padding: 0;}
+	ul{
+	  list-style: none;
+	}
+	img{
+	  border: none;
+	  vertical-align: middle;
+	}
+	.clearfix:after{
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+	.wrapper{
+	  width: 1120px;
+	  margin: auto;
+	}
+	h2{
+	  text-align: center;
+	  line-height: 60px;
+	}
+	ul.container{
+	  margin-left: -10px;
+	  margin-right: -10px;
+	}
+	.container>li{
+	  float: left;
+	  margin: 10px 0;
+	  padding: 0 10px;
+	  width: 360px;
+	  height: 230px;
+	}
+	.container>li img{
+	  width: 100%;
+	  height: 230px;
+	}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+    <h2>懒加载图片墙</h2>
+      <ul class="container clearfix">
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/xin.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/rain.jpg"></a></li>
+        <li><a href="#"><img src="images/load.gif" alt="" data-src="images/glass.jpg"></a></li>
+      </ul>
+</div>
+<script src="scripts/jquery-2.2.3.min.js"></script>
+<script src="scripts/lazy.js"></script>
+</body>
+</html>

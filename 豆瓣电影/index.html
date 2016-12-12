@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- bootstrap 的移动适应版本信息配置 移动设备优先的设置 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+
+    <title>豆瓣电影</title>
+    <link rel="shortcut icon" href="images/wen.jpg">
+
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-app="app">
+
+    <!-- 导航栏 -->
+    <div class="nav navbar-inverse navbar-fixed-top">
+        <!-- 豆瓣首页 -->
+        <a href="#">
+            <div class="navbar-brand">
+                豆瓣首页
+            </div>
+        </a>
+
+        <!--电影列表-->
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse ">
+                <ul class="nav navbar-nav">
+                    <!-- 后期应该是一个绑定效果 -->
+                    <!---->
+                    <!--<mylist></mylist>-->
+                    <!---->
+                    <li><a href="">电影详情</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下盒子 -->
+    <div class="container-fluid">
+
+        <!-- 左侧盒子 -->
+        <div class="row">
+            <div class="col-sm-3 col-md-2 siderbar hidden-xs">
+                <ul class="nav nav-pills nav-stacked">
+
+                    <!--这一块需要和右边的内容响应 点击改变谁???
+                        数据源
+                     -->
+
+                    <li class="active">
+                        <a select-link href="#/in_theaters">正在热映</a>
+                    </li>
+                    <li><a select-link href="#/coming_soon">即将上映</a></li>
+                    <li><a select-link href="#/top250">TOP250</a></li>
+                </ul>
+
+                <br>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="请输入想看的电影">
+                    <span class="input-group-addon" id="basic_addon">搜索</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 内容 -->
+        <!-- 一初始就加载 -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="movie/movie-detail-controller.js"></script>
+    <script src="movie/movie-list-controller.js"></script>
+
+</body>
+</html>

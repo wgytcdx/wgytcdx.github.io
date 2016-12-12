@@ -1,0 +1,213 @@
+/*图片公共类设置开始*/
+.img_c{
+    margin-left: 9px;
+}
+.img_size{
+    width: 180px;
+    height: 180px;
+}
+.img1_c{
+    margin-left: 29px;
+}
+/*图片公共类设置结束*/
+
+/*产品描述的公共类设置开始*/
+.p_name{
+    height: 20px;
+    width: 178px;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+.p_con{
+    height: 20px;
+    width: 198px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 20px;
+}
+.p_price{
+    height: 20px;
+    width: 198px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #e2231a;
+}
+/*产品公共类设置的结束*/
+
+/*内容设置的总体设置开始*/
+
+/*今日推荐设置开始*/
+.content .inner_c .today{
+    margin-top: 10px;
+    height: 159px;
+    width: 1200px;
+}
+.content .inner_c .today .today_left{
+    float: left;
+    background-image: url("../images/today_recommend.jpg");
+    width: 192px;
+    height: 159px;
+}
+.content .inner_c .today .today_right{
+    height: 159px;
+    width: 1008px;
+    overflow: hidden;
+    position: relative;
+}
+.content .inner_c .today .today_right ul{
+    height: 159px;
+    width: 500%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.content .inner_c .today .today_right ul li{
+    float: left;
+}
+.content .inner_c .today .today_right .arrow{
+    height: 69px;
+    width: 1008px;
+    position: absolute;
+    margin-top: 45px;
+    display: none;
+    cursor: pointer;
+}
+.content .inner_c .today .today_right .arrow .arrow_l{
+    float: left;
+    width: 41px;
+    height: 69px;
+    color: white;
+    font:100 40px/69px "simsun";
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.content .inner_c .today .today_right .arrow .arrow_r{
+    float: right;
+    width: 41px;
+    height: 69px;
+    color: white;
+    font:100 40px/69px "simsun";
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+/*今日推荐设置结束*/
+
+
+.content .inner_c .star_c{
+    margin-top: 30px;
+    width: 1200px;
+    height: 299px;
+}
+.content .inner_c .like_c{
+    margin-top: 70px;
+    width: 1200px;
+    height: 299px;
+}
+.content .inner_c h3 ul{
+    margin-bottom: -30px;
+}
+.content .inner_c h3 ul li{
+    float: left;
+    padding: 0 10px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.content .inner_c h3{
+    height: 42px;
+}
+.content .inner_c h3 span{
+    height: 42px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 42px;
+    font-weight: bold;
+}
+
+/*明星单品设置开始*/
+.content .inner_c .star_c .star{
+    width: 1200px;
+    height: 299px;
+    position: relative;
+    overflow: hidden;
+
+}
+.content .inner_c .star_c .star ul{
+    width: 500%;
+    height: 299px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content .inner_c .star_c .star ul li{
+    width: 198px;
+    height: 297px;
+    border: 1px solid #e6e6e6;
+}
+.content .inner_c .star_c .star ul li:hover{
+    border-top: red solid 1px;
+}
+.content .inner_c .like_c .like ul li{
+    width: 198px;
+    height: 297px;
+    border: 1px solid #e6e6e6;
+}
+/*明星单品设置结束*/
+
+
+/*一到五楼设置开始*/
+.content .floor{
+    margin-top: 140px;
+    background-color: #f5f5f5;
+}
+.content .floor .floor_box .floor_right ul li img{
+    display: inline-block;
+    transition: margin-left 1s;
+}
+.content .floor .floor_box .floor_right ul li a img:hover{
+    margin-left: 38px;
+    transition: margin-left 1s;
+}
+.content .floor .inner_c .one_floor{
+    padding-top: 30px;
+    height: 583px;
+}
+.content .floor .inner_c .two_floor{
+    padding-top: 30px;
+    height: 583px;
+}
+.content .floor .inner_c .three_floor{
+    padding-top: 30px;
+    height: 583px;
+}
+.content .floor .inner_c .four_floor{
+    padding-top: 30px;
+    height: 583px;
+}
+.content .floor .inner_c .five_floor{
+    padding-top: 30px;
+    height: 583px;
+}
+.content .floor .inner_c .floor_box .floor_left{
+    height: 535px;
+    width: 240px;
+}
+.content .floor .inner_c .floor_box .floor_right{
+    background-color: white;
+    height: 535px;
+    width: 960px;
+}
+.content .floor .inner_c .floor_box .floor_right ul li{
+    width: 238px;
+    height: 265px;
+    border: 1px solid #e6e6e6;
+}
+/*一到五楼设置结束*/

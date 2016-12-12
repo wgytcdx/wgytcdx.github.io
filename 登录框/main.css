@@ -1,0 +1,182 @@
+  *{
+    	margin: 0;
+    	padding: 0;
+    }
+	body{
+		background: url(imgs/bg.png) repeat;
+	    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	    font-size: 16px;
+	    line-height: 1.5;
+	}
+	ul,li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color: #9d948d;
+	}
+	img{
+		border: none;
+		vertical-align: middle;
+	}
+	input{
+        border: none;
+        outline: none;
+    }
+    button{
+        outline: none;
+    }
+    .site-login-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left:  -275px;
+        width: 550px;
+        height: 500px;
+    }
+    .header h2{
+        text-align: center;
+        word-spacing: 1px;
+        color: #625e5b;
+        font-weight: normal;
+        height: 35px;
+        line-height: 35px;
+    }
+    .header .title{
+        font-family: "Brush Script Std";
+        font-size: 40px;
+        color: #625e5b;
+    }
+	.login-form{
+        width: 310px;
+        margin: 30px auto;
+        padding: 30px 25px 0 25px;
+        background: url(imgs/login_bg.png) repeat;
+        border: 1px solid #f3feef;
+        box-sizing: border-box;
+        border-radius: 3px;
+		box-shadow: 0px 1px 2px 1px #aaaaaa, inset 0px 1px 1px rgba(255,255,255,0.7);
+	}
+	.login-items{
+		position: relative;
+		margin-bottom: 25px;
+        height: 40px;
+        line-height: 40px;  
+	}
+	.login-items .login-pwd,
+    .login-items .login-user{
+		width: 100%;
+        height: 40px;
+		padding-left: 35px;
+		font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid #d2cdc9;
+        background-color: #e1dcd8;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 3px #fff, inset 0px 1px 2px #aaa;
+	}
+    .login-items input:focus,
+    .login-items input:focus{
+        color: #625e5b;
+        background-color: #f5f2ef;
+    }
+	.login-items .pics{
+		position: absolute;
+		top: 2px;
+        left: 12px;
+       
+	}
+    .login-items span{
+        color: #988e87;
+    }
+	.login-items #checkbox{
+        width: 20px;
+        height: 20px;
+        visibility: hidden;
+        vertical-align: middle;
+    }
+    .login-items .square{
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        background-color: #f5f2ef;
+        border: 1px solid #fff;
+        box-shadow: 0 0 3px 1px #bebab7;
+        cursor: pointer;
+    }
+    .login-items .square:after{
+        position: absolute;
+        content: '';
+        top: 1px;
+        left: 5px;
+        width: 5px;
+        height: 10px;
+        border: 3px solid #74884a;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg);
+        opacity: 0.2;
+    }
+    .login-items input[type=checkbox]:checked + label:after {
+        opacity: 1;
+}
+    .login-items .remember{
+        margin-left: 6px;
+        color: #625e5b;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .rmb{
+        height: 25px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+    .login-items a{
+        font-size: 12px;
+        color: #988e87;
+    }
+    .login-btn{
+        width: 100%;
+        height: 40px;
+    	font-size: 14px;
+    	color: #fff;
+    	border: 1px solid #6d7756;
+        border-top-color: #7c8762;
+        background-color: #7a924a;
+        border-radius: 2px;
+        background-image: linear-gradient(to bottom, #99ae69, #667c3a);
+        box-shadow: 0px 1px 0px rgba(170,170,170,1), inset 0px 1px 1px rgba(255,255,255,0.7); 
+        cursor: pointer;
+    }
+    .login-items input[type*="button"]:hover {
+    opacity: 0.8;
+}
+    .footer{
+        text-align: center;
+    }
+    .footer p{
+        color: #706b68;
+        font-size: 12px;
+    }
+     .footer p>a{
+        font-size: 13px;
+        border-bottom: 1px solid #c9c2bc;
+    }
+    .footer .links>li{
+    	display: inline-block;
+    	text-align: center;
+    	font-size: 12px;
+    	padding: 10px 2px;   	
+    }
+    .footer .links a{
+        border-bottom: 1px solid #c9c2bc;
+
+    }
+    .footer .links>li.line{
+    	color: #98938f;
+    	font-size: 13px;
+    	font-weight: normal;
+    }

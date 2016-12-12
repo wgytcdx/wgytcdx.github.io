@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟时钟</title>
+    <link rel="icon" type="image/jpg" href="images2/clock.jpg"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .clock{
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            position: relative;
+            background: url("images2/clock.jpg") no-repeat;
+        }
+        .clock div{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+        }
+        .h{
+            background: url("images2/hour.png") no-repeat center;
+        }
+        .m{
+            background: url("images2/minute.png") no-repeat center;
+        }
+        .s{
+            background: url("images2/second.png") no-repeat center;
+        }
+    </style>
+    <script>
+       window.onload = function () {
+           var hour = document.getElementById("hour");
+           var minute = document.getElementById("minute");
+           var second = document.getElementById("second");
+
+           hour.style.webkitTransform =  "rotate(180deg)";
+           minute.style.webkitTransform =  "rotate(60deg)";
+           second.style.webkitTransform =  "rotate(120deg)";
+
+           var h = 0, m = 0, s = 0, ms = 0 ;
+           setInterval(function(){
+               var date = new Date();
+               ms = date.getMilliseconds();
+               s = date.getSeconds() + ms / 1000;
+               m = date.getMinutes() + s / 60;
+               h = date.getHours() % 12 + m / 60;
+//               console.log(h + ":" + m + ":" + s);
+               second.style.webkitTransform =  "rotate("+ 6*s +"deg)";
+               minute.style.webkitTransform =  "rotate("+ 6*m +"deg)";
+               hour.style.webkitTransform =  "rotate("+ 30*h +"deg)";
+           }, 10)
+       }
+    </script>
+</head>
+<body>
+<div class="clock">
+    <div class="h" id="hour"></div>
+    <div class="m" id="minute"></div>
+    <div class="s" id="second"></div>
+</div>
+</body>
+</html>

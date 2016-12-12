@@ -1,0 +1,146 @@
+@charset "UTF-8";
+.big_bg{
+	position: absolute;
+	width: 1000px;
+	height: 500px;
+	left: 50%;
+	margin-left: -500px;
+	top: 50%;
+	margin-top: -300px;
+	border-radius: 20px;
+	/*background: url("../imgs/7.jpg") no-repeat center center;*/
+	overflow: hidden;
+}
+.wrapper{
+	width: 220px;
+    height: 250px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -110px;
+	background-color: #eef1f2;
+	border-radius: 10px;
+	box-shadow: 0px 6px 7px #999;
+	opacity: 1;
+}
+.wrapper .background{
+	width: 100%;
+    height: 80px;
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
+	opacity: 0.3;
+}
+.wrapper .background img{
+	width: 100%;
+}
+.wrapper .content{
+	height: 95px;
+	padding: 30px 15px 10px;
+	color: #455569;
+	line-height: 1.3;
+}
+.wrapper .content .song-info{
+	width: 100px;
+	float: left;
+}
+.wrapper .content .songname{
+	font-size: 16px;
+	font-weight: 700;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.wrapper .content .singer{
+	font-size: 12px;
+	font-weight: 700;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.wrapper .content .album{
+	font-size: 12px;
+	margin-top: 5px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.wrapper .content .music-icon{
+	float: right;
+}
+.wrapper .content .music-icon a,
+.wrapper .content .music-icon span{
+	margin-left: 0px;
+	font-size: 20px;
+}
+span{
+	cursor: pointer;
+}
+span.colored,
+a.colored{
+	color: #cdd2d7;
+}
+span.love{
+	color: #fe8698;
+}
+span.start{
+	color: #feec98
+}
+.basebar{
+	height: 4px;
+	width: 180px;
+	border-radius: 5px;
+	background: #414141;
+	cursor: pointer;
+	margin: 10px 20px;
+	position: relative;
+}
+.basebar .progressbar{
+	height: 4px;
+	width: 0px;
+	border-radius: 5px;
+	background: #CDD2D7;
+}
+.controls{
+	padding: 8px 20px;
+}
+.controls .play-control{
+	float: left;
+	color: #d9d9d9;
+}
+.controls .play-control #controlBtn{
+	display: inline-block;
+	vertical-align: middle;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 22px;
+	text-align: center;
+	background: #414141;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.controls .play-control #prevBtn,
+.controls .play-control #nextBtn{
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-align: center;
+	background: #414141;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.controls .music-control{
+	float: right;
+	line-height: 40px;
+}
+.controls .music-control span{
+	font-size: 20px;
+	margin-left: 8px;
+}
+span.selected{
+	color: #414141;
+}

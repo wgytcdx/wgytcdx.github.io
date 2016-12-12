@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+*{margin: 0; padding: 0;}
+*{box-sizing: border-box;}
+ul,li {
+	list-style: none;
+}
+img {
+	border: 0;
+	vertical-align: middle;
+}
+a {
+	text-decoration: none;
+	transition: all .1s ease-in-out;
+}
+input{
+  border: none;
+}
+body {
+	font-family: "Open Sans",sans-serif;
+    font-weight: 100;
+    color: #475261;
+    font-size: 1.3rem;
+}
+.clearfix:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.form-content li.heighterror{
+  padding: 4px 5px 2px 9px;
+  background: #FFDFDF!important;
+  border-bottom: 1px solid #EACBCC;
+  border-right: 1px solid #EACBCC;
+  margin: 3px 0
+}
+.form-content{
+  padding: 10px 50px 50px;
+}
+.form-content .panel{
+  width: 100%;
+  padding: 8px 6px;
+  border-top: 1px solid #7c7c7c;
+  border-right: 1px solid #c3c3c3;
+  border-left: 1px solid #c3c3c3;
+  border-bottom: 1px solid #ddd;
+}
+.form-content .ipt-error{
+  border-color: red;
+}
+#formbtn{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background: #E2CB6D;
+}
+#formbtn:hover{
+  background: #eada98;
+}
+p.error{
+  color: red;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+<div class="form-content">
+      <form action="">
+        <ul>
+        <li>  
+          <lable class=title for=name>姓名</lable>
+          <div>
+            <input type="text" class="panel" id=username name="name" placeholder="只能是字母、数字、下划线，3-10个字符">
+          </div>
+          <p class="nameErro error"></p>
+          </li>
+       <li> 
+          <lable class=title for=name>邮箱</lable>
+          <div>
+            <input type="text" class="panel" id=email name="email" placeholder="mysupermail@mail.com">
+          </div>
+          <p class="emailErro error"></p>
+       </li>
+       <li>
+        <lable class=title for=conment>留言</lable>
+        <div>
+          <textarea class="panel" name="conment" id="conment" cols="30" rows="10"></textarea>
+       </div>
+       </li>
+       <li>
+        <input type="submit" id=formbtn value="提交">
+       </li>
+       </ul>
+      </form>
+  </div>
+<script src="forClass.js"></script>
+<script src="reg.js"></script>
+<script src="ajaxMod.js"></script>
+<script id="jsbin-javascript">
+var userNameIpt = document.querySelector('#username')
+var emailIpt = document.querySelector('#email')
+var formBtn = document.querySelector('#formbtn')
+var nameErro = document.getElementsByClassName('nameErro')[0]
+var emailErro = document.getElementsByClassName('emailErro')[0]
+
+userNameIpt.addEventListener('change',function(){
+ testUseName() &&testUnUseage()
+});
+
+emailIpt.addEventListener('change',function(){
+  testEmail()
+});
+formBtn.addEventListener('click',function(e){
+  e.preventDefault()
+  if(testUseName() && testEmail()){
+    testUnUseage(function (validName){
+      if (validName) {
+        console.log('系统正在注册中')
+        alert('注册成功')
+      }
+    })  
+  }
+});
+// AJAX请求后台数据验证用户名是否存在
+function testUnUseage(handle){
+  ajax({
+    url: 'userName.php',
+    type: 'post',
+    data: {userName: usernameIpt.value},
+    success: function(ret){
+      if(!ret.data){
+        nameErro.innerText = '用户名已经存在'
+        addClass(userNameIpt,'ipt-error')
+        handle && handle(false)
+      }else if (ret.data) {
+        nameErro.innerText = ''
+        removeClass(userNameIpt,'ipt-error')
+        handle && handle(true)
+      }
+    }
+  })
+}
+function testUseName(){
+  var userName = userNameIpt.value;
+  if(!regName(userName)){
+    nameErro.innerText = '用户名格式不正确'
+    addClass(userNameIpt,'ipt-error')
+    console.log('本地：用户名输入格式错了，没有发送Ajax')
+    return false
+  }else{
+    nameErro.innerText =''
+    removeClass(userNameIpt,'ipt-error')
+    console.log('本地：用户名输入格式对了')
+    return true
+  }
+}
+function testEmail(){
+  var email = emailIpt.value
+  if(!regEmail(email)){
+    emailErro.innerText = 'email格式不正确';
+    addClass(emailIpt,'ipt-error')
+    console.log('本地：email格式不正确')
+    return false
+  }else{
+    emailErro.innerText = '' 
+    removeClass(emailIpt,'ipt-error')
+    console.log('本地：email格式正确')
+    return true
+  }
+}
+/*
+*这里设定一个最终状态确认，只有当ajax数据之后，并且这个反馈是true的时候，这里才会是true，最终的提交才会提示注册成功
+*/
+
+</script>
+</body>
+</html>

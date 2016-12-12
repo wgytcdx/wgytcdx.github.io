@@ -1,0 +1,109 @@
+<!-- 因为这个页面是一个内嵌的模块所以不需要那么多东西 -->
+<!--<div>-->
+    <!--&lt;!&ndash;title&ndash;&gt;-->
+    <!--<div></div>-->
+
+    <!--&lt;!&ndash;list&ndash;&gt;-->
+    <!--<div></div>-->
+
+    <!--&lt;!&ndash;foot changePage total number&ndash;&gt;-->
+    <!--<div></div>-->
+
+<!--</div>-->
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Document</title>-->
+
+    <!--<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css">-->
+
+<!--</head>-->
+<!--<body>-->
+
+
+<!-- 分析一下 angluar当中的数据绑定部分
+     ng-bind
+     scope 区域当中的绑定
+     ng-modal 智能绑定基础的数据 不推荐
+ -->
+
+<!-- 标题 绑定标题 和主页面当中的三个按钮配合  -->
+<h2 class="page-header" ng-bind="title"></h2>
+<!-- 列表 -->
+
+<!-- 当前只有一个列表项
+     绑定数组列表项
+
+     每个元素都需要独立绑定
+ -->
+
+
+<div class="list-group">
+
+    <a class="list-group-item" ng-repeat="movie in movies" href="#/detail/{{ movie.id }}">
+        <div class="media">
+            <span class="badge pull-right">{{movie.rating.average}}</span>
+            <div class="media-left">
+                <img class="media-object img-thumbnail" src="{{movie.images.small}}" alt="{{movie.title}}">
+            </div>
+            <div class="media-body">
+                <h3 class="media-heading">
+                    {{movie.title}}
+                </h3>
+                <p class="caption">
+                    导演:
+                    <span ng-repeat="director in movie.directors">{{director.name}}{{$last?'':'、'}}</span>
+                </p>
+                <p class="caption">
+                    类型:
+                    <span >{{movie.genres.join('、')}}</span>
+                </p>
+            </div>
+
+        </div>
+    </a>
+</div>
+
+<!-- total：总条数 size:一页的数量 page：当前第几页 -->
+<uib-pager total-items="total" items-per-page="size" align="false" ng-model="currentPage">
+</uib-pager>
+<p style="text-align: center;">共:{{ total || 1000}}条</p>
+
+<!--底部 两个按钮 总数-->
+
+<div>
+    <!--<button class="btn btn-default">上一页</button>-->
+    <!--<button class="btn btn-default">下一页</button>-->
+<!-- 需要绑定 -->
+
+</div>
+
+<!-- 模态视图 绑定加载进度 加载完成 消失-->
+
+<div class="modal fade show" ng-class="{in:loading}" ng-hide="!loading" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title">正在加载</h4>
+            </div>
+            <div class="modal-body">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped active"
+                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only">100% Complete (success)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--</body>-->
+<!--</html>-->
+
+

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            /*text-align: center;*/
+        }
+
+        #container{
+            position: relative;
+            /*left: 50%;*/
+
+        }
+        .box{
+            padding: 5px;
+            float: left;
+            background-color: skyblue;
+        }
+        .box_img{
+            padding: 5px;
+            border:1px solid red;
+             /*阴影效果*/
+            /*box-shadow: 0 0 5px red;*/
+            border-radius: 5px;
+        }
+        .box_img img{
+            width: 150px;
+            height: auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var boxs = document.getElementsByClassName("box");
+
+            function imgLocation(parent, content){
+                var cparent = document.getElementById(parent);
+                var boxs = document.getElementsByClassName("box");
+//                console.log(boxs[0]);
+//                console.log(boxs.length);
+                var boxWidth = boxs[0].offsetWidth;
+                var clientWidth = document.documentElement.clientWidth;
+                console.log(clientWidth);
+                var cols = parseInt(clientWidth / boxWidth);
+//                alert(cols);
+//                alert(clientWidth);
+//                alert(boxWidth);
+                cparent.style.width = boxWidth * cols + "px";
+                cparent.style.margin = "0 auto";
+
+                var boxHeightArr = [];
+                for (var i = 0; i < boxs.length; i++){
+                    if (i < cols){
+                        boxHeightArr[boxHeightArr.length] = boxs[i].offsetHeight;
+                    }else {
+                        var minheight = Math.min.apply(null, boxHeightArr);
+                        console.log(minheight);
+                        var minIndex = getMinHeightLocation(boxHeightArr, minheight);
+
+                        boxs[i].style.position = "absolute";
+                        boxs[i].style.top = minheight + "px";
+                        boxs[i].style.left = minIndex * boxWidth + "px";
+                        boxHeightArr[minIndex] = boxHeightArr[minIndex] + boxs[i].offsetHeight;
+
+                    }
+                }
+
+            }
+            imgLocation("container");
+
+            // 获取最小高度图片的下标
+            function getMinHeightLocation(boxHeightarr, minH) {
+                for(var i in boxHeightarr){
+                    if (boxHeightarr[i] == minH){
+                        return i;
+                    }
+                }
+            }
+            var imgData = {
+                "data" :[{"src" : "1.jpg"},{"src" : "2.jpg"},{"src" : "3.jpg"},{"src" : "8.jpg"},{"src" : "6.jpg"}]
+            };
+
+            // 当移到最后一张图片时,创造节点
+            window.onscroll = function () {
+                var container = document.getElementById("container");
+                if (checkFlag()){
+                   for(var j = 0; j < imgData.data.length; j++){
+                       console.log("1");
+                       var newBox = document.createElement("div");
+                       newBox.className = "box";
+                       container.appendChild(newBox);
+                       var newBoxImg = document.createElement("div");
+                       newBoxImg.className = "box_img";
+                       newBox.appendChild(newBoxImg);
+                       var newImg = document.createElement("img");
+                       newImg.src = "img/" + imgData.data[j].src;
+                       console.log(newImg);
+                       newBoxImg.appendChild(newImg);
+                    }
+               }
+                // 创造完节点后,还需要重新布局
+                imgLocation("container");
+
+            }
+
+            function checkFlag() {
+                var lastBoxHeight = boxs[boxs.length - 1].offsetTop;
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                console.log(scrollTop);
+                var pageHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                console.log(lastBoxHeight+":"+ scrollTop +":"+ pageHeight);
+
+                if (lastBoxHeight < (scrollTop + pageHeight)){
+                    return true;
+                }
+            }
+
+//            checkFlag();
+        }
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--// 用来承载图片的大小-->
+    <div class="box">
+        <div class="box_img">
+            <img src="img/1.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/2.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/3.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/4.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/5.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/6.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/7.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/8.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/9.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/10.jpg">
+        </div>
+    </div><div class="box">
+    <div class="box_img">
+        <img src="img/1.jpg">
+    </div>
+</div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/2.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/3.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/4.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/5.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/6.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/7.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/8.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/9.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/10.jpg">
+        </div>
+    </div><div class="box">
+    <div class="box_img">
+        <img src="img/1.jpg">
+    </div>
+</div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/2.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/3.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/4.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/5.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/6.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/7.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/8.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/9.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/10.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/1.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/2.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/3.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/4.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/5.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/6.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/7.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/8.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/9.jpg">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box_img">
+            <img src="img/10.jpg">
+        </div>
+    </div>
+</div>
+</body>
+</html>
