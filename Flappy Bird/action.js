@@ -163,8 +163,7 @@ function init () {
     var canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
      document.onkeyup = keyUp;
-    document.onclick = keyUp;
-    document.ondoubleclick = reAction;
+    document.onclick = reAction;
     //配置属性
     tid = setInterval(drawWall,80);
 }
