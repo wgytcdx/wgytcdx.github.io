@@ -70,7 +70,7 @@
 							<h1>Always have a curiosity<br>IN
 			      <span class="flipup">
 			          <span class="wodryRX">
-			               HTML|CSS|JQUERY|VUE|LEAFLET|CESIUM
+			               JQUERY|VUE|LEAFLET|CESIUM
 			          </span>
 			      </span>
 							</h1>
@@ -128,13 +128,13 @@
 					<p>Html+Css+JS,极致模拟时钟,北京时间</p>
 				</a>
 			</article>
-			<article>
+			<!--<article>
 				<a href="h5zombies/index.html" target="_blank">
 					<img src="h5zombies/images/Zombies/Zombie/BoomDie.gif">
 					<h3>HTML5植物大战僵尸</h3>
 					<p>JS版经典塔防游戏</p>
 				</a>
-			</article>
+			</article>-->
 			<article>
 				<a href="cesium-BirdAni/index.html" target="_blank">
 					<img src="cesium-BirdAni/birdani.jpg">
@@ -299,17 +299,11 @@
 </script>
 <script>
 	/*------navShow------*/
-	$.goNavShow($('#top-js'))
+	$.goNavShow($('#top-js'));
 	/*------文字翻转------*/
-	$('.wodryRX').wodry({
-
-    animation: 'rotateX',
-
-    delay: 1000,
-
-    animationDuration: 800
-
-});
+	$(function (){
+        $('.wodry').wodry();
+	})
 </script>
 	<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="199" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 </body>
