@@ -27,9 +27,8 @@
 	});
 	/*------gotoTop------*/
 	$('.gotop-js').on('click',function(e){
-		e.preventDefault();
 		$('body').animate({scrollTop: 0},'slow')
-	})
+	});
 	/*------modal------*/
 	var $last = $('li.last');
 	var $modalCt = $('#modal');
@@ -59,9 +58,5 @@
 		$(this).siblings().removeClass('dim');
 	});
 	/*------文字翻转------*/
-	$('.wodryRX').wodry({
-	    animation: 'rotateX',
-	    delay: 1500,
-	    animationDuration: 800
-	});
+
 })(jQuery)
