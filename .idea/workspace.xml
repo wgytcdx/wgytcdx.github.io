@@ -2,53 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea6bd94c-822e-441d-8daf-401b2770853b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/xiangce/imgs/9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index/js/scripts/jquery-1.11.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index/js/scripts/jquery-2.2.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jquery/jquery-2.2.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/bootstrap-3.3.7-dist/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bootstrap/js/npm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/bs和js插件/jquery-3.1.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Flappy Bird/综合项目.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Flappy Bird/综合项目.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/love-demo/js/jquery-3.1.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/love-demo/love.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/love-demo/love.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/三级联动地址搜索/全国地址三级联动搜索.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/仿联想商城/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/仿联想商城/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/仿联想商城/js/jquery-3.1.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/4 .jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/img/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/图片无限加载/瀑布流2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/images/glass.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/images/load.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/images/rain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/images/xin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/scripts/jquery-2.2.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/scripts/lazy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/懒加载图片/scripts/loadComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/计算器/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/计算器/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/xiangce/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/xiangce/index.html" afterDir="false" />
     </list>
     <ignored path="个人网页.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,24 +32,25 @@
     <session id="-695754467">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="14" />
-          <entry key="Image" value="1" />
-          <entry key="JavaScript" value="10" />
+          <entry key="HTML" value="18" />
+          <entry key="Image" value="3" />
+          <entry key="JavaScript" value="12" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="15" />
-          <entry key="HTML" value="262" />
+          <entry key="HTML" value="284" />
           <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
@@ -134,17 +102,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="465">
+              <caret line="298" selection-start-line="298" selection-end-line="298" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/xiangce/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="205" column="47" lean-forward="true" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -165,9 +142,11 @@
       <find>wodryRX</find>
       <find>icon-share</find>
       <find>wodry</find>
-      <find>img</find>
       <find>7.</find>
       <find>1.11.2</find>
+      <find>imgdata</find>
+      <find>img</find>
+      <find>Poly</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,6 +190,7 @@
         <option value="$PROJECT_DIR$/pages/love-demo/love.html" />
         <option value="$PROJECT_DIR$/pages/仿联想商城/index.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/pages/xiangce/index.html" />
       </list>
     </option>
   </component>
@@ -253,37 +233,20 @@
             <path>
               <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
               <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
               <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="love-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="xiangce" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
               <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="love-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="仿联想商城" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="个人网页" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wgytcdx.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="哔哩哔哩菜单按钮" type="462c0819:PsiDirectoryNode" />
+              <item name="xiangce" type="462c0819:PsiDirectoryNode" />
+              <item name="imgs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -297,24 +260,24 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548231748647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548235213418" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\index\images" />
-      <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\音乐播放器\js" />
-      <recent name="C:\个人网页\个人网页首页\images" />
-      <recent name="C:\个人网页\网页简历\images" />
-      <recent name="C:\个人网页\个人网页首页\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\lib\bootstrap" />
       <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\lib\jquery" />
       <recent name="C:\个人网页" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\pages\xiangce\imgs" />
+      <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\index\images" />
+      <recent name="C:\Users\wgy\Documents\GitHub\wgytcdx.github.io\音乐播放器\js" />
+      <recent name="C:\个人网页\个人网页首页\images" />
+      <recent name="C:\个人网页\网页简历\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -378,18 +341,19 @@
       <updated>1476927480377</updated>
       <workItem from="1547186329045" duration="3676000" />
       <workItem from="1548075873621" duration="2273000" />
-      <workItem from="1548230203438" duration="1462000" />
+      <workItem from="1548230203438" duration="1833000" />
+      <workItem from="1548234469546" duration="742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7411000" />
+    <option name="totallyTimeSpent" value="8524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17430703" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -454,14 +418,6 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1040" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/网页简历/aresume.css" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc" />
-    <entry file="file://$PROJECT_DIR$/登录框/login.html" />
-    <entry file="file://$PROJECT_DIR$/个人网页首页/images/projects/7.png" />
-    <entry file="file://$PROJECT_DIR$/网页简历/images/1.png" />
-    <entry file="file://$PROJECT_DIR$/个人网页首页/images/k2.jpg" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/embed.rnc" />
-    <entry file="file://$PROJECT_DIR$/个人网页首页/images/5-1.png" />
     <entry file="file://$PROJECT_DIR$/个人网页首页/images/6.png" />
     <entry file="file://$PROJECT_DIR$/个人网页首页/images/2.png" />
     <entry file="file://$PROJECT_DIR$/个人网页首页/images/3.png" />
@@ -515,9 +471,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index/images/lazy.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index/images/lazy.jpg" />
     <entry file="file://$PROJECT_DIR$/pages/cesium-BirdAni/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -542,34 +496,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/scripts/loadComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/scripts/lazy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/scripts/loadComponent.js" />
+    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/scripts/lazy.js" />
+    <entry file="file://$PROJECT_DIR$/pages/懒加载图片/index.html" />
     <entry file="file://$PROJECT_DIR$/pages/仿联想商城/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40657">
@@ -577,16 +509,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/登录框/n/userName.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/登录框/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/登录框/n/ajaxMod.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/登录框/n/forClass.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/登录框/n/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/音乐播放器/YYindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="465">
+          <caret line="298" selection-start-line="298" selection-end-line="298" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/xiangce/imgs/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/xiangce/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="205" column="47" lean-forward="true" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
         </state>
       </provider>
     </entry>
