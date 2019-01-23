@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://o7m41tvmg.bkt.clouddn.com/jquery-1.12.4.min.js"></script>
+<script src="../../lib/jquery/jquery-2.2.3.min.js"></script>
   <meta charset="utf-8">
   <title>简易计算器</title>
 <link rel="stylesheet" type="text/css" href="index.css">
@@ -34,7 +34,7 @@
     <div class="menu">
       <button name=clear class=clear>Clear</button>
     </div>
-    
+
   </div>
 <script id="jsbin-javascript">
   var $input = $('input[name=input]')
@@ -50,7 +50,7 @@
       if(lastSecondInput){
         inputValue2 = lastSecondInput + number
       }else{
-        inputValue2 = number 
+        inputValue2 = number
       }
       lastSecondInput=inputValue2
       $input.val(inputValue2)
@@ -59,7 +59,7 @@
       if(lastInput){
         inputValue1 = lastInput + number
       }else{
-        inputValue1 = number 
+        inputValue1 = number
       }
       lastInput = inputValue1
       $input.val(inputValue1)
@@ -70,7 +70,7 @@
   $('.side button').on('click',function(){
     var oprator = $(this).text()
     lastOperator = oprator
-    $input.val(lastOperator) 
+    $input.val(lastOperator)
   })
   //result事件
   $('button[name=result]').on('click',function(){
@@ -93,7 +93,7 @@
       $input.val('')
     }
   })
-  //table设计模式 
+  //table设计模式
   function operatorFactory(name){
     var table = {
       '+': function(a,b){return a+b},
