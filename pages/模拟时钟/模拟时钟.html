@@ -33,27 +33,28 @@
     </style>
     <script>
        window.onload = function () {
-           var hour = document.getElementById("hour");
-           var minute = document.getElementById("minute");
-           var second = document.getElementById("second");
+         const hour = document.getElementById('hour');
+         const minute = document.getElementById('minute');
+         const second = document.getElementById('second');
 
-           hour.style.webkitTransform =  "rotate(180deg)";
-           minute.style.webkitTransform =  "rotate(60deg)";
-           second.style.webkitTransform =  "rotate(120deg)";
+         hour.style.webkitTransform = 'rotate(180deg)';
+         minute.style.webkitTransform = 'rotate(60deg)';
+         second.style.webkitTransform = 'rotate(120deg)';
 
-           var h = 0, m = 0, s = 0, ms = 0 ;
-           setInterval(function(){
-               var date = new Date();
-               ms = date.getMilliseconds();
-               s = date.getSeconds() + ms / 1000;
-               m = date.getMinutes() + s / 60;
-               h = date.getHours() % 12 + m / 60;
-//               console.log(h + ":" + m + ":" + s);
-               second.style.webkitTransform =  "rotate("+ 6*s +"deg)";
-               minute.style.webkitTransform =  "rotate("+ 6*m +"deg)";
-               hour.style.webkitTransform =  "rotate("+ 30*h +"deg)";
-           }, 10)
-       }
+         let h = 0; let m = 0; let s = 0; let
+    ms = 0;
+         setInterval(() => {
+           const date = new Date();
+           ms = date.getMilliseconds();
+           s = date.getSeconds() + ms / 1000;
+           m = date.getMinutes() + s / 60;
+           h = date.getHours() % 12 + m / 60;
+    //               console.log(h + ":" + m + ":" + s);
+           second.style.webkitTransform = `rotate(${6 * s}deg)`;
+           minute.style.webkitTransform = `rotate(${6 * m}deg)`;
+           hour.style.webkitTransform = `rotate(${30 * h}deg)`;
+  }, 10);
+       };
     </script>
 </head>
 <body>

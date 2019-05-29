@@ -37,71 +37,79 @@
 
   </div>
 <script id="jsbin-javascript">
-  var $input = $('input[name=input]')
-  var lastInput
-  var lastOperator
-  var lastSecondInput
-  //参数事件
-  $('button.number').on('click',function(){
-    var value = $(this).text()
-    var number = value
-    if(lastOperator){
-      var inputValue2
-      if(lastSecondInput){
-        inputValue2 = lastSecondInput + number
-      }else{
-        inputValue2 = number
+  const $input = $('input[name=input]');
+  let lastInput;
+  let lastOperator;
+  let lastSecondInput;
+  // 参数事件
+  $('button.number').on('click', function () {
+    const value = $(this).text();
+    const number = value;
+    if (lastOperator) {
+      let inputValue2;
+      if (lastSecondInput) {
+        inputValue2 = lastSecondInput + number;
+      } else {
+        inputValue2 = number;
       }
-      lastSecondInput=inputValue2
-      $input.val(inputValue2)
-    }else{
-      var inputValue1
-      if(lastInput){
-        inputValue1 = lastInput + number
-      }else{
-        inputValue1 = number
+      lastSecondInput = inputValue2;
+      $input.val(inputValue2);
+    } else {
+      let inputValue1;
+      if (lastInput) {
+        inputValue1 = lastInput + number;
+      } else {
+        inputValue1 = number;
       }
-      lastInput = inputValue1
-      $input.val(inputValue1)
+      lastInput = inputValue1;
+      $input.val(inputValue1);
     }
-
-  })
-  //操作符
-  $('.side button').on('click',function(){
-    var oprator = $(this).text()
-    lastOperator = oprator
-    $input.val(lastOperator)
-  })
-  //result事件
-  $('button[name=result]').on('click',function(){
-    lastInput =+lastInput
-    lastSecondInput =+lastSecondInput
-    var result
-    var operatorFunction = operatorFactory(lastOperator)
-    result =  operatorFunction(lastInput,lastSecondInput)
-    $input.val(result)
-    lastOperator = ''
-    lastInput = ''
-    lastSecondInput = ''
-  })
-  //clear清除数据
-  $('button[name=clear]').on('click',function(){
-    if(lastOperator || lastInput || lastSecondInput ||$input.val()){
-      lastOperator = ''
-      lastInput = ''
-      lastSecondInput = ''
-      $input.val('')
-    }
-  })
-  //table设计模式
-  function operatorFactory(name){
-    var table = {
-      '+': function(a,b){return a+b},
-      '-': function(a,b){return a-b},
-      '*': function(a,b){return a*b},
-      '/': function(a,b){return a/b}
-    }
-    return table[name]
+  });
+  // 操作符
+  $('.side button').on('click', function () {
+    const oprator = $(this).text();
+    lastOperator = oprator;
+    $input.val(lastOperator);
+  });
+  // result事件
+  $('button[name=result]').on('click', () => {
+  lastInput = Number(lastInput);
+  lastSecondInput = Number(lastSecondInput);
+  let result;
+  const operatorFunction = operatorFactory(lastOperator);
+  result = operatorFunction(lastInput, lastSecondInput);
+  $input.val(result);
+  lastOperator = '';
+  lastInput = '';
+  lastSecondInput = '';
+});
+  // clear清除数据
+  $('button[name=clear]').on('click', () => {
+  if (lastOperator || lastInput || lastSecondInput || $input.val()) {
+      lastOperator = '';
+      lastInput = '';
+      lastSecondInput = '';
+      $input.val('');
+  }
+});
+  // table设计模式
+  function operatorFactory(name) {
+    const table = {
+      '+': function (a, b) {
+        return a + b;
+      },
+      '-': function (a, b) {
+        return a - b;
+      },
+      '*': function (a, b) {
+        return a * b;
+      },
+      '/': function (a, b) {
+        return a / b;
+      },
+    };
+  
+  return table[name];
   }
 </script>
 </body>

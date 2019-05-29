@@ -102,77 +102,82 @@ p.error{
 <script src="reg.js"></script>
 <script src="ajaxMod.js"></script>
 <script id="jsbin-javascript">
-var userNameIpt = document.querySelector('#username')
-var emailIpt = document.querySelector('#email')
-var formBtn = document.querySelector('#formbtn')
-var nameErro = document.getElementsByClassName('nameErro')[0]
-var emailErro = document.getElementsByClassName('emailErro')[0]
+const userNameIpt = document.querySelector('#username');
+const emailIpt = document.querySelector('#email');
+const formBtn = document.querySelector('#formbtn');
+const nameErro = document.getElementsByClassName('nameErro')[0];
+const emailErro = document.getElementsByClassName('emailErro')[0];
 
-userNameIpt.addEventListener('change',function(){
- testUseName() &&testUnUseage()
+userNameIpt.addEventListener('change', () => {
+  testUseName() && testUnUseage();
 });
 
-emailIpt.addEventListener('change',function(){
-  testEmail()
+emailIpt.addEventListener('change', () => {
+  testEmail();
 });
-formBtn.addEventListener('click',function(e){
-  e.preventDefault()
-  if(testUseName() && testEmail()){
-    testUnUseage(function (validName){
+formBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (testUseName() && testEmail()) {
+    testUnUseage((validName) => {
       if (validName) {
-        console.log('系统正在注册中')
-        alert('注册成功')
+        console.log('系统正在注册中');
+        alert('注册成功');
       }
-    })  
+    });
   }
 });
 // AJAX请求后台数据验证用户名是否存在
-function testUnUseage(handle){
+function testUnUseage(handle) {
   ajax({
     url: 'userName.php',
     type: 'post',
-    data: {userName: usernameIpt.value},
-    success: function(ret){
-      if(!ret.data){
-        nameErro.innerText = '用户名已经存在'
-        addClass(userNameIpt,'ipt-error')
-        handle && handle(false)
-      }else if (ret.data) {
-        nameErro.innerText = ''
-        removeClass(userNameIpt,'ipt-error')
-        handle && handle(true)
+    data: { userName: usernameIpt.value },
+    success(ret) {
+      if (!ret.data) {
+        nameErro.innerText = '用户名已经存在';
+        addClass(userNameIpt, 'ipt-error');
+        handle && handle(false);
+      } else if (ret.data) {
+        nameErro.innerText = '';
+        removeClass(userNameIpt, 'ipt-error');
+        handle && handle(true);
       }
-    }
-  })
+    },
+  });
 }
-function testUseName(){
-  var userName = userNameIpt.value;
-  if(!regName(userName)){
-    nameErro.innerText = '用户名格式不正确'
-    addClass(userNameIpt,'ipt-error')
-    console.log('本地：用户名输入格式错了，没有发送Ajax')
-    return false
-  }else{
-    nameErro.innerText =''
-    removeClass(userNameIpt,'ipt-error')
-    console.log('本地：用户名输入格式对了')
-    return true
+function testUseName() {
+  const userName = userNameIpt.value;
+
+  if (!regName(userName)) {
+    nameErro.innerText = '用户名格式不正确';
+    addClass(userNameIpt, 'ipt-error');
+    console.log('本地：用户名输入格式错了，没有发送Ajax');
+
+    return false;
   }
+  nameErro.innerText = '';
+  removeClass(userNameIpt, 'ipt-error');
+  console.log('本地：用户名输入格式对了');
+
+  return true;
 }
-function testEmail(){
-  var email = emailIpt.value
-  if(!regEmail(email)){
+function testEmail() {
+  const email = emailIpt.value;
+
+  if (!regEmail(email)) {
     emailErro.innerText = 'email格式不正确';
-    addClass(emailIpt,'ipt-error')
-    console.log('本地：email格式不正确')
-    return false
-  }else{
-    emailErro.innerText = '' 
-    removeClass(emailIpt,'ipt-error')
-    console.log('本地：email格式正确')
-    return true
+    addClass(emailIpt, 'ipt-error');
+    console.log('本地：email格式不正确');
+
+    return false;
   }
+  emailErro.innerText = '';
+  removeClass(emailIpt, 'ipt-error');
+  console.log('本地：email格式正确');
+
+  return true;
 }
+
 /*
 *这里设定一个最终状态确认，只有当ajax数据之后，并且这个反馈是true的时候，这里才会是true，最终的提交才会提示注册成功
 */

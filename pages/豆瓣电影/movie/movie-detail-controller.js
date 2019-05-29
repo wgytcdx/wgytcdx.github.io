@@ -9,23 +9,22 @@
 // route 在不改变网页的引用的情况下 改变模板的调用 传入的信号不一样出现的结果不一样
 // $provider 提供路由需要切换的信号
 
-var mdModule = angular.module("app.movieDetail",[]);
+const mdModule = angular.module('app.movieDetail', []);
 
-mdModule.controller("MovieDetailController",
-    ['$scope','URLConfig','$http','$rootScope','$route','$routeParams',
-    function ($scope,URLConfig,$http,$rootScope,$route,$routeParams) {
-        var appurl = URLConfig.appURL;
+mdModule.controller('MovieDetailController',
+  ['$scope', 'URLConfig', '$http', '$rootScope', '$route', '$routeParams',
+    function ($scope, URLConfig, $http, $rootScope, $route, $routeParams) {
+      const appurl = URLConfig.appURL;
 
-        var movieId = $routeParams.movieId;
+      const { movieId } = $routeParams;
 
-        var url = appurl + 'subject/' + movieId + "?callback=movieDetailCallBack";
+      const url = `${appurl}subject/${movieId}?callback=movieDetailCallBack`;
 
-        $http.jsonp(url).error(function () {
+      $http.jsonp(url).error(() => {
 
-        });
+      });
 
-        window.movieDetailCallBack = function (jsonData) {
-            $scope.movie = jsonData;
-        }
+      window.movieDetailCallBack = function (jsonData) {
+        $scope.movie = jsonData;
+      };
     }]);
-

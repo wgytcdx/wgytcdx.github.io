@@ -269,91 +269,90 @@
 <script src="index/js/main.js"></script>
 
 <script>
-    $(function () {
-        var liItems = $("#Change").children();
-        var liLen = liItems.length;
-        var count = 0;
-        var Atimer = null;
+    $(() => {
+    const liItems = $('#Change').children();
+    const liLen = liItems.length;
+    let count = 0;
+    let Atimer = null;
 
-        //定义图片切换函数(即改变透明度)
-        function showImages(index) {
-            for (var i = 0; i < liLen - 1; i++) {
-                liItems[i].style.zIndex = 100 - i;
-                liItems[i].style.opacity = '0';
-            }
-            liItems[index].style.zIndex = 100;
-            liItems[index].style.opacity = '1';
+    // 定义图片切换函数(即改变透明度)
+    function showImages(index) {
+        for (let i = 0; i < liLen - 1; i++) {
+          liItems[i].style.zIndex = 100 - i;
+          liItems[i].style.opacity = '0';
         }
+        liItems[index].style.zIndex = 100;
+        liItems[index].style.opacity = '1';
+    }
 
-        showImages(0);
+    showImages(0);
 
-        //定义自动轮播函数
-        function autoplay() {
-            if (count % 2 == 0) {
-                count = 0;
-            }
-            showImages(count);
-            count++;
+    // 定义自动轮播函数
+    function autoplay() {
+        if (count % 2 == 0) {
+          count = 0;
         }
+        showImages(count);
+        count++;
+    }
 
-        Atimer = setInterval(autoplay, 3000);
+    Atimer = setInterval(autoplay, 3000);
 
-        /*------navShow------*/
-        $.goNavShow($('#top-js'));
-        $('.wodryRX').wodry();
+    /* ------navShow------*/
+    $.goNavShow($('#top-js'));
+    $('.wodryRX').wodry();
 
 
-        $(".top_ul li").mouseover(function () {
-            $(this).children("div").addClass("selected");
+    $('.top_ul li').mouseover(function () {
+        $(this).children('div').addClass('selected');
+    });
+    $('.top_ul li').mouseout(function () {
+        $(this).children('div').removeClass('selected');
+    });
+
+
+    let clock; // 设置延时，提高性能
+    $(window).on('scroll', () => {
+    if (clock) {
+          clearTimeout(clock);
+    }
+    clock = setTimeout(() => {
+    checkAppeared();
+    }, 500);
+  });
+    checkAppeared(); // 打开页面加载可视范围内的图片
+    // 检查图片是否已加载
+    function checkAppeared() {
+        $('body img').each(function () {
+          const $current = $(this);
+          if ($current.attr('isLoaded')) { /* 滚动的时候检测每一张图片，该图片位置如果已经显示了，就可以加载图片了 */
+            return;
+          }
+          if (isVisible($current)) {
+            loadImg($current);
+          }
         });
-        $(".top_ul li").mouseout(function () {
-            $(this).children("div").removeClass("selected");
-        });
+    }
 
+    function loadImg(node) {
+        const $node = $(node);
+        $node.attr('src', $node.attr('data-src'));
+        $node.attr('isLoad', true);
+    }
 
-        var clock; //设置延时，提高性能
-        $(window).on('scroll', function () {
-            if (clock) {
-                clearTimeout(clock)
-            }
-            clock = setTimeout(function () {
-                checkAppeared()
-            }, 500)
-        });
-        checkAppeared(); //打开页面加载可视范围内的图片
-        //检查图片是否已加载
-        function checkAppeared() {
-            $('body img').each(function () {
-                var $current = $(this);
-                if ($current.attr('isLoaded')) { /* 滚动的时候检测每一张图片，该图片位置如果已经显示了，就可以加载图片了 */
-                    return
-                }
-                if (isVisible($current)) {
-                    loadImg($current)
-                }
-            });
-        }
-
-        function loadImg(node) {
-            var $node = $(node);
-            $node.attr('src', $node.attr('data-src'));
-            $node.attr('isLoad', true)
-        }
-
-        //判断图片是否出现在可视区域内
-        function isVisible(node) {
-            var $node = $(node);
-            var scrollTop = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            var offSetHeight = $node.offset().top;
-            if (scrollTop + windowHeight >= offSetHeight) {
-                return true
-            } else {
-                return false
-            }
-        }
-
-    })
+    // 判断图片是否出现在可视区域内
+    function isVisible(node) {
+    const $node = $(node);
+    const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    const offSetHeight = $node.offset().top;
+    if (scrollTop + windowHeight >= offSetHeight) {
+          return true;
+    }
+    
+    return false;
+  }
+});
 </script>
 <!--背景墙-->
 <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99"

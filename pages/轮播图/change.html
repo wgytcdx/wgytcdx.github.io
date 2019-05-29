@@ -90,67 +90,67 @@
 
     <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
     <script>
-        $(function () {
+        $(() => {
 //            console.log($("ul").children().length);
-            var liItems = $("#imgChange").children();
-            var liLen = liItems.length;
-            var circlesItems = $("#circlesChange").children();
-            var count = 0;
-            var Atimer = null;
+  const liItems = $('#imgChange').children();
+  const liLen = liItems.length;
+  const circlesItems = $('#circlesChange').children();
+  let count = 0;
+  let Atimer = null;
 
-//          定义图片切换函数(即改变透明度)
-            function showImages(index){
-                for(var i = 0; i < liLen; i++){
-                    liItems[i].style.zIndex = 100 - i;
-                    liItems[i].style.opacity = '0';
-                    circlesItems[i].children[0].className = '';
-                }
-                liItems[index].style.zIndex = 100;
-                liItems[index].style.opacity = '1';
-                circlesItems[index].children[0].className = 'active';
-            }
-            showImages(0);
-//          定义自动轮播函数
-            function autoplay(){
-                if(count % 3 == 0){
-                    count = 0;
-                }
-                showImages(count);
-                count++;
-            }
-            Atimer = setInterval(autoplay, 2000);
+  //          定义图片切换函数(即改变透明度)
+  function showImages(index) {
+        for (let i = 0; i < liLen; i++) {
+              liItems[i].style.zIndex = 100 - i;
+              liItems[i].style.opacity = '0';
+              circlesItems[i].children[0].className = '';
+        }
+        liItems[index].style.zIndex = 100;
+        liItems[index].style.opacity = '1';
+        circlesItems[index].children[0].className = 'active';
+  }
+  showImages(0);
+  //          定义自动轮播函数
+  function autoplay() {
+        if (count % 3 == 0) {
+              count = 0;
+        }
+        showImages(count);
+        count++;
+  }
+  Atimer = setInterval(autoplay, 2000);
 
-//          左右箭头的点击函数
-            var arrowsItems = $("#arrowChange").children();
-            arrowsItems[0].onclick = function () {
-                clearInterval(Atimer);
-                if(count == 0){
-                    count = 3;
-                }
-                count -= 1;
-                console.log(count);
-                showImages(count);
-                Atimer = setInterval(autoplay, 2000);
-            }
-            arrowsItems[1].onclick = function () {
-                clearInterval(Atimer);
-                autoplay();
-                Atimer = setInterval(autoplay, 2000);
-            }
+  //          左右箭头的点击函数
+  const arrowsItems = $('#arrowChange').children();
+
+  arrowsItems[0].onclick = function () {
+        clearInterval(Atimer);
+        if (count == 0) {
+              count = 3;
+        }
+        count -= 1;
+        console.log(count);
+        showImages(count);
+        Atimer = setInterval(autoplay, 2000);
+  };
+  arrowsItems[1].onclick = function () {
+        clearInterval(Atimer);
+        autoplay();
+        Atimer = setInterval(autoplay, 2000);
+  };
 
 
-            //          定义小圆点击函数
-//            console.log(circlesItems[0].children[0]);
-            for(var i = 0; i < liLen; i++){
-                circlesItems[i].index = i;
-                circlesItems[i].onclick = function () {
-                    clearInterval(Atimer);
-                    showImages(this.index);
-                    Atimer = setInterval(autoplay, 2000);
-                }
-            }
-
-        })
+  //          定义小圆点击函数
+  //            console.log(circlesItems[0].children[0]);
+  for (let i = 0; i < liLen; i++) {
+        circlesItems[i].index = i;
+        circlesItems[i].onclick = function () {
+              clearInterval(Atimer);
+              showImages(this.index);
+              Atimer = setInterval(autoplay, 2000);
+        };
+  }
+});
 
     </script>
 </head>

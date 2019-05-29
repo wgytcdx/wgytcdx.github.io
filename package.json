@@ -1,0 +1,36 @@
+{
+    "name": "wgytcdx.github.io",
+    "version": "1.0.0",
+    "description": "wgy个人博客",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint --ext .html pages/",
+        "lint-fix": "eslint --fix --ext .html pages/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wgytcdx/wgytcdx.github.io.git"
+    },
+    "keywords": [
+        "王高益",
+        "博客",
+        "简历",
+        "demo"
+    ],
+    "author": "王高益/wgy/https://github.com/wgytcdx",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/wgytcdx/wgytcdx.github.io/issues"
+    },
+    "homepage": "https://github.com/wgytcdx/wgytcdx.github.io#readme",
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-html": "^5.0.5",
+        "eslint-plugin-import": "^2.17.3"
+    }
+}
