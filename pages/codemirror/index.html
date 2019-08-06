@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--begin code mirror -->
+<!--下面两个是使用Code Mirror必须引入的-->
+<link rel="stylesheet" href="./lib/codemirror.css"/>
+<script src="./lib/codemirror.js"></script>
+<!--Java代码高亮必须引入-->
+<script src="./lib/clike.js"></script>
+<!--groovy代码高亮-->
+<script src="./mode/groovy/groovy.js"></script>
+<!--引入css文件，用以支持主题-->
+<link rel="stylesheet" href="./theme/3024-day.css">
+<link rel="stylesheet" href="./theme/3024-night.css">
+<link rel="stylesheet" href="./theme/abcdef.css">
+<link rel="stylesheet" href="./theme/ambiance.css">
+<link rel="stylesheet" href="./theme/base16-dark.css">
+<link rel="stylesheet" href="./theme/bespin.css">
+<link rel="stylesheet" href="./theme/base16-light.css">
+<link rel="stylesheet" href="./theme/blackboard.css">
+<link rel="stylesheet" href="./theme/cobalt.css">
+<link rel="stylesheet" href="./theme/colorforth.css">
+<link rel="stylesheet" href="./theme/dracula.css">
+<link rel="stylesheet" href="./theme/duotone-dark.css">
+<link rel="stylesheet" href="./theme/duotone-light.css">
+<link rel="stylesheet" href="./theme/eclipse.css">
+<link rel="stylesheet" href="./theme/elegant.css">
+<link rel="stylesheet" href="./theme/erlang-dark.css">
+<link rel="stylesheet" href="./theme/gruvbox-dark.css">
+<link rel="stylesheet" href="./theme/hopscotch.css">
+<link rel="stylesheet" href="./theme/icecoder.css">
+<link rel="stylesheet" href="./theme/isotope.css">
+<link rel="stylesheet" href="./theme/lesser-dark.css">
+<link rel="stylesheet" href="./theme/liquibyte.css">
+<link rel="stylesheet" href="./theme/lucario.css">
+<link rel="stylesheet" href="./theme/material.css">
+<link rel="stylesheet" href="./theme/mbo.css">
+<link rel="stylesheet" href="./theme/mdn-like.css">
+<link rel="stylesheet" href="./theme/midnight.css">
+<link rel="stylesheet" href="./theme/monokai.css">
+<link rel="stylesheet" href="./theme/neat.css">
+<link rel="stylesheet" href="./theme/neo.css">
+<link rel="stylesheet" href="./theme/night.css">
+<link rel="stylesheet" href="./theme/nord.css">
+<link rel="stylesheet" href="./theme/oceanic-next.css">
+<link rel="stylesheet" href="./theme/panda-syntax.css">
+<link rel="stylesheet" href="./theme/paraiso-dark.css">
+<link rel="stylesheet" href="./theme/paraiso-light.css">
+<link rel="stylesheet" href="./theme/pastel-on-dark.css">
+<link rel="stylesheet" href="./theme/railscasts.css">
+<link rel="stylesheet" href="./theme/rubyblue.css">
+<link rel="stylesheet" href="./theme/seti.css">
+<link rel="stylesheet" href="./theme/shadowfox.css">
+<link rel="stylesheet" href="./theme/solarized.css">
+<link rel="stylesheet" href="./theme/the-matrix.css">
+<link rel="stylesheet" href="./theme/tomorrow-night-bright.css">
+<link rel="stylesheet" href="./theme/tomorrow-night-eighties.css">
+<link rel="stylesheet" href="./theme/ttcn.css">
+<link rel="stylesheet" href="./theme/twilight.css">
+<link rel="stylesheet" href="./theme/vibrant-ink.css">
+<link rel="stylesheet" href="./theme/xq-dark.css">
+<link rel="stylesheet" href="./theme/xq-light.css">
+<link rel="stylesheet" href="./theme/yeti.css">
+<link rel="stylesheet" href="./theme/idea.css">
+<link rel="stylesheet" href="./theme/darcula.css">
+<link rel="stylesheet" href="./theme/yonce.css">
+<link rel="stylesheet" href="./theme/zenburn.css">
+
+<script src="./lib/codemirror.js"></script>
+<script src="./mode/javascript/javascript.js"></script>
+<script src="./addon/selection/active-line.js"></script>
+<script src="./addon/edit/matchbrackets.js"></script>
+
+<script src="../../lib/jquery/jquery-2.2.3.min.js"></script>
+
+<!--支持代码折叠-->
+<link rel="stylesheet" href="./addon/fold/foldgutter.css"/>
+<script src="./addon/fold/foldcode.js"></script>
+<script src="./addon/fold/foldgutter.js"></script>
+<script src="./addon/fold/brace-fold.js"></script>
+<script src="./addon/fold/comment-fold.js"></script>
+<!--括号匹配-->
+<script src="./addon/edit/matchbrackets.js"></script>
+<!--end Code Mirror -->
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Code Mirror Demo</title>
+</head>
+<style>
+    body,html{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    #select{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        z-index: 10;
+    }
+    .CodeMirror-sizer{
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <select name="" id="select">
+        <option selected>default</option>
+        <option>3024-day</option>
+        <option>3024-night</option>
+        <option>abcdef</option>
+        <option>ambiance</option>
+        <option>base16-dark</option>
+        <option>base16-light</option>
+        <option>bespin</option>
+        <option>blackboard</option>
+        <option>cobalt</option>
+        <option>colorforth</option>
+        <option>darcula</option>
+        <option>dracula</option>
+        <option>duotone-dark</option>
+        <option>duotone-light</option>
+        <option>eclipse</option>
+        <option>elegant</option>
+        <option>erlang-dark</option>
+        <option>gruvbox-dark</option>
+        <option>hopscotch</option>
+        <option>icecoder</option>
+        <option>idea</option>
+        <option>isotope</option>
+        <option>lesser-dark</option>
+        <option>liquibyte</option>
+        <option>lucario</option>
+        <option>material</option>
+        <option>mbo</option>
+        <option>mdn-like</option>
+        <option>midnight</option>
+        <option>monokai</option>
+        <option>neat</option>
+        <option>neo</option>
+        <option>night</option>
+        <option>nord</option>
+        <option>oceanic-next</option>
+        <option>panda-syntax</option>
+        <option>paraiso-dark</option>
+        <option>paraiso-light</option>
+        <option>pastel-on-dark</option>
+        <option>railscasts</option>
+        <option>rubyblue</option>
+        <option>seti</option>
+        <option>shadowfox</option>
+        <option>solarized dark</option>
+        <option>solarized light</option>
+        <option>the-matrix</option>
+        <option>tomorrow-night-bright</option>
+        <option>tomorrow-night-eighties</option>
+        <option>ttcn</option>
+        <option>twilight</option>
+        <option>vibrant-ink</option>
+        <option>xq-dark</option>
+        <option>xq-light</option>
+        <option>yeti</option>
+        <option>yonce</option>
+        <option>zenburn</option>
+    </select>
+</body>
+</html>
+<!-- 示例代码 -->
+<textarea id="code" name="code">
+#include "syscalls.h"
+/* getchar:  simple buffered version */
+int getchar(void)
+{
+  static char buf[BUFSIZ];
+  static char *bufp = buf;
+  static int n = 0;
+  if (n == 0) {  /* buffer is empty */
+    n = read(0, buf, sizeof buf);
+    bufp = buf;
+  }
+  return (--n >= 0) ? (unsigned char) *bufp++ : EOF;
+}
+</textarea>
+<script>
+    //根据DOM元素的id构造出一个编辑器
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        // mode: "text/groovy",    //实现groovy代码高亮
+        // mode: "text/x-java", //实现Java代码高亮
+        lineNumbers: true,	//显示行号
+        theme: "dracula",	//设置主题
+        lineWrapping: true,	//代码折叠
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        matchBrackets: true,	//括号匹配
+        //readOnly: true,        //只读
+    });
+    editor.setSize('calc(100%)', 'calc(100%)'); 
+    $("#select").on('change',function(){
+        let option = $("#select").val();
+        editor.setOption("theme",option);
+    })
+
+    // editor.setValue("");    //代码框清空
+
+    // editor.setOption("readOnly", true);//只读
+</script>
