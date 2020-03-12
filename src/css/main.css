@@ -206,7 +206,7 @@ header nav h1{
 	/*background: url(../images/banner-desktop.jpg) center/cover no-repeat;*/
 	z-index: 200 !important;
 	width: 100%;
-	height: 700px;
+	height: 100%;
 	position: relative;
 	text-align: center;
 	display: flex;
@@ -218,7 +218,7 @@ header nav h1{
 }
 .siteHome-wrapper #Change li img{
 	width: 100%;
-	height: 700px;
+	height: 100%;
 	position: absolute;
 	top: 0;
 }

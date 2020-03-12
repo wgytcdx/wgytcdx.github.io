@@ -1,4 +1,5 @@
 (function () {
+  $('.banner_div').css('height', `${document.documentElement.clientHeight}px`);
 
   /* ------navShow------*/
   $.goNavShow = function (node) {
@@ -97,7 +98,7 @@ $(() => {
     count++;
   }
 
-  Atimer = setInterval(autoplay, 3000);
+  Atimer = setInterval(autoplay, 5000);
 
   /* ------navShow------*/
   $.goNavShow($('#top-js'));
