@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="container-fluid">
+
+    <div class="jumbotron">
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object img-thumbnail" src="{{movie.images.large}}" alt="{{movie.title}}">
+            </div>
+
+            <div class="media-body">
+
+                <h1>{{movie.title}}</h1>
+
+                <table class="table">
+                    <tr>
+                        <td>
+                            <b>导演:</b>
+                            <span ng-repeat="director in movie.directors">
+                                <span class="label label-success">
+                                    {{director.name}}
+                                </span>
+                                &nbsp;
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>类型:</b>
+                            <span ng-repeat="type in movie.genres">
+                                <span class="label label-success">
+                                    {{type}}
+                                </span>
+                                &nbsp;
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>上映时间:</b>
+                            <span class="label label-success">{{movie.year}}</span>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div>
+            <p>剧情:{{movie.summary}}</p>
+        </div>
+    </div>
+
+    <div>
+        <h3>
+            评论列表
+        </h3>
+    </div>
+
+</div>

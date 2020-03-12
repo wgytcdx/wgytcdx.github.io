@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../lib/jquery/jquery-2.2.3.min.js"></script>
+  <meta charset="utf-8">
+  <title>简易计算器</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="wrapper">
+    <input type="text" name=input class=view>
+    <div class="content clearfix">
+      <ul class="main">
+        <li><button class=number>7</button></li>
+        <li><button class=number>8</button></li>
+        <li><button class=number>9</button></li>
+        <li><button class=number>4</button></li>
+        <li><button class=number>5</button></li>
+        <li><button class=number>6</button></li>
+        <li><button class=number>1</button></li>
+        <li><button class=number>2</button></li>
+        <li><button class=number>3</button></li>
+        <li><button class=number>0</button></li>
+        <li><button class=number>.</button></li>
+        <li><button class="result" name=result>=</button></li>
+      </ul>
+      <ul class=side>
+        <li><button class=oprator>+</button></li>
+        <li><button class=oprator>-</button></li>
+        <li><button class=oprator>*</button></li>
+        <li><button class=oprator>/</button></li>
+      </ul>
+   </div>
+    <div class="menu">
+      <button name=clear class=clear>Clear</button>
+    </div>
+
+  </div>
+<script id="jsbin-javascript">
+  const $input = $('input[name=input]');
+  let lastInput;
+  let lastOperator;
+  let lastSecondInput;
+  // 参数事件
+  $('button.number').on('click', function () {
+    const value = $(this).text();
+    const number = value;
+    if (lastOperator) {
+      let inputValue2;
+      if (lastSecondInput) {
+        inputValue2 = lastSecondInput + number;
+      } else {
+        inputValue2 = number;
+      }
+      lastSecondInput = inputValue2;
+      $input.val(inputValue2);
+    } else {
+      let inputValue1;
+      if (lastInput) {
+        inputValue1 = lastInput + number;
+      } else {
+        inputValue1 = number;
+      }
+      lastInput = inputValue1;
+      $input.val(inputValue1);
+    }
+  });
+  // 操作符
+  $('.side button').on('click', function () {
+    const oprator = $(this).text();
+    lastOperator = oprator;
+    $input.val(lastOperator);
+  });
+  // result事件
+  $('button[name=result]').on('click', () => {
+  lastInput = Number(lastInput);
+  lastSecondInput = Number(lastSecondInput);
+  let result;
+  const operatorFunction = operatorFactory(lastOperator);
+  result = operatorFunction(lastInput, lastSecondInput);
+  $input.val(result);
+  lastOperator = '';
+  lastInput = '';
+  lastSecondInput = '';
+});
+  // clear清除数据
+  $('button[name=clear]').on('click', () => {
+  if (lastOperator || lastInput || lastSecondInput || $input.val()) {
+      lastOperator = '';
+      lastInput = '';
+      lastSecondInput = '';
+      $input.val('');
+  }
+});
+  // table设计模式
+  function operatorFactory(name) {
+    const table = {
+      '+': function (a, b) {
+        return a + b;
+      },
+      '-': function (a, b) {
+        return a - b;
+      },
+      '*': function (a, b) {
+        return a * b;
+      },
+      '/': function (a, b) {
+        return a / b;
+      },
+    };
+  
+  return table[name];
+  }
+</script>
+</body>
+</html>

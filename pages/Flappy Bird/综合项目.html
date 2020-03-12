@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.1,user-scalable=no">
+
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme.css"/>
+    <script src="../../lib/jquery/jquery-2.2.3.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+
+    <style>
+        header{
+            height: 40px;
+            background: linear-gradient(#e6e6e6, #f5f5f5);
+        }
+        nav{
+            height: 50px;
+            background: papayawhip;
+            margin-top: 10px;
+        }
+        section{
+            height: 450px;
+            background: skyblue;
+            margin-top: 10px;
+        }
+        footer{
+            height: 30px;
+            background: #0f0f0f;
+            margin-top: 10px;
+        }
+
+        @keyframes jay{
+            0%{font-size: 30px}
+            50%{font-size: 35px}
+            100%{font-size: 40px}
+        }
+        #jay{
+            text-shadow: #000000 2px 2px 2px;
+            animation: jay 2s 100 linear;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #canvas{
+            align-content: center;
+            left: 50%;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body onload="init();">
+
+
+
+
+<!-- 中间为游戏部分 -->
+<section class="col-sm-8 col-lg-push-2" style="width: 400px;height: 600px;background-color: #fff;">
+    <canvas id="canvas" width="400px" height="600px"></canvas>
+</section>
+
+
+
+<!-- 登录框模态 -->
+<div class="modal" id="loginmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true"> × </span>
+                    <span class="sr-only">close</span>
+                </button>
+                <h3>请登录</h3>
+            </div>
+            <div class="modal-body">
+                <p>登录</p><input type="text" placeholder="请输入用户名"/>
+                <p>密码</p><input type="password" placeholder="请输入密码"/>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-toggle="modal" data-target="#signin" data-dismiss="modal">注册</button>
+                <button class="btn btn-success" id="log">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 注册框模态 -->
+    <div class="modal" id="signinmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" data-target="#signin">
+                        <span aria-hidden="true"> &times;</span>
+                        <span class="sr-only">close</span>
+                    </button>
+                    <h3>请注册</h3>
+                </div>
+                <div class="modal-body">
+                    <p>用户名</p><input type="text" placeholder="请输入用户名" id="uname"/>
+                    <p>密码</p><input type="password" placeholder="请输入密码" id="pwd"/>
+                    <p>确认密码</p><input type="password" placeholder="请再次输入密码" id="checkpwd"/>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" id="surebtn">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    /* 注册框数据保存 */
+    const uname = $('#uname');
+    const pwd = $('#pwd');
+    const checkpwd = $('#checkpwd');
+    const surebtn = $('#surebtn');
+
+    const exspan = document.createElement('span');
+    const exmeter = document.createElement('meter');
+    exmeter.low = 3;
+    exmeter.high = 7;
+    exmeter.optimum = 8;
+    exmeter.max = 12;
+
+
+    pwd[0].oninput = function () {
+
+    };
+
+    checkpwd[0].oninput = function () {
+      if (this.value != pwd.val() && this.value.length != 0) {
+        exspan.innerHTML = '×&nbsp;  输入密码有误，清重新输入';
+      } else {
+        exspan.innerHTML = '√&nbsp;  输入正确';
+      }
+      this.parentNode.appendChild(exspan);
+      if (checkpwd.val().length == 0) {
+        this.parentNode.removeChild(exspan);
+      }
+    };
+
+    surebtn[0].onclick = function () {
+      if (uname.val().length != 0 && pwd.val().length != 0) {
+        localStorage.setItem('usernames', uname.val());
+        localStorage.setItem('password', pwd.val());
+        $('#signinmodal').modal('hide');
+        alert('注册成功！');
+      } else {
+        alert('用户名和密码输入不能为空！');
+      }
+    };
+</script>
+
+<script>
+    /* var toggle = document.getElementById("toggle");
+    var scr = document.getElementById("src");
+    toggle.onclick = function () {
+        scr.setAttribute("src", "action.js");
+    } */
+</script>
+
+<script id="scr" src="action.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+body,html,ul,li,button{
+  margin: 0;
+  padding: 0;
+}
+ul{list-style: none;}
+button{
+  border: none;
+  outline: medium none;
+}
+body{
+  font-family: "Microsoft YaHei", sans-serif;
+  color: #fff;
+  font-size: 14px;
+  background-color: #f9f7f6;
+}
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.wrapper{
+  width: 250px;
+  margin: auto; 
+  margin-top: 100px;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+  border: 2px solid black;
+}
+.wrapper .view{
+  height: 40px;
+  width: 100%;
+  color: #555;
+  font-size: 30px;
+  text-align: right;
+  box-shadow: inset 3px 3px rgba(0,0,0,.2);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.wrapper .content{
+  margin: 10px 0px;
+}
+.wrapper .content .main{
+  float: left;
+  width: 200px;
+}
+.wrapper .content .main>li{
+  display: inline-block; 
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.wrapper .main .number,
+.wrapper .main .result{
+  padding: 20px;
+  width: 50px;
+  text-align: center;
+  color: inherit;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+  background-color: #4274D7;
+  transition: all 0.04s linear;
+  cursor: pointer;
+}
+.wrapper .main .number:active{
+  box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+  background-color: #4274D7;
+  transform: translate(0, 4px);
+}
+.wrapper .main .result{
+  box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
+  background-color: #FEAF20; 
+}
+.wrapper .main .result:active{
+  box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+  background-color: #FEAF20;
+  transform: translate(0, 4px);
+}
+.wrapper .content .side{
+  float: left;
+}
+.wrapper .content .side .oprator{
+  color: inherit;
+  padding: 20px;
+  width: 50px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
+  background-color: #78d739;
+  transition: all 0.04s linear;
+  cursor: pointer;
+}
+.wrapper .content .side .oprator:active{
+  box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+  background-color: #78d739;
+  transform: translate(0, 4px); 
+}
+.wrapper .clear{
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  color: inherit;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+  background-color: #D73814;
+  transition: all 0.04s linear;
+  cursor: pointer;
+}
+.wrapper .clear:active{
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+  background-color: #D73814;
+  transform: translate(0, 4px);
+}

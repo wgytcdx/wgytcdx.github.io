@@ -1,0 +1,55 @@
+{
+  "name": "wgytcdx.github.io",
+  "version": "1.0.0",
+  "description": "wgy个人博客",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .html pages/",
+    "lint-fix": "eslint --fix --ext .html pages/",
+    "dev": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wgytcdx/wgytcdx.github.io.git"
+  },
+  "keywords": [
+    "王高益",
+    "博客",
+    "简历",
+    "demo"
+  ],
+  "author": "王高益/wgy/https://github.com/wgytcdx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wgytcdx/wgytcdx.github.io/issues"
+  },
+  "homepage": "https://github.com/wgytcdx/wgytcdx.github.io#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.17.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^5.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^6.0.0",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-sprites": "^4.2.1",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.42.0",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

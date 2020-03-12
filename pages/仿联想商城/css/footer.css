@@ -1,0 +1,396 @@
+/*左边侧栏开始*/
+.leftbar{
+    position: fixed;
+    left: 50%;
+    margin-left: -650px;
+    z-index: 99;
+    width: 30px;
+    top: 50%;
+    margin-top: -166px;
+    text-align: center;
+    display: none;
+    font-family: arial, "Microsoft YaHei", sans-serif;
+}
+.leftbar ul .ns_line { /*用作下划线的Li标签*/
+    width: 10px;
+    height: 0;
+    font-size: 0;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 5px auto;
+    line-height: 0;
+}
+.leftbar ul li{
+    font-size: 0px;
+    width: 30px;
+    display: block;
+    margin: 0 auto;
+    height: 26px;
+    line-height: 12px;
+    cursor: pointer;
+}
+/*左侧栏背景开始*/
+.leftbar ul li.star{
+    background: url(../images/jingling.png) no-repeat 2px -455px;
+}
+.leftbar ul li.like{
+    background: url(../images/jingling.png) no-repeat -26px -455px;
+}
+.leftbar ul li.f1{
+    background: url("../images/lou.jpg") no-repeat 1px -6px;
+}
+.leftbar ul li.f2{
+    background: url("../images/lou.jpg") no-repeat 3px -45px;
+}
+.leftbar ul li.f3{
+    background: url("../images/lou.jpg") no-repeat 3px -83px;
+}
+.leftbar ul li.f4{
+    background: url("../images/lou.jpg") no-repeat 3px -120px;
+}
+.leftbar ul li.f5{
+    background: url("../images/lou.jpg") no-repeat 3px -158px;
+}
+.leftbar ul li.f6{
+    background: url("../images/lou.jpg") no-repeat 3px -190px;
+}
+/*左侧栏背景开始*/
+
+.leftbar ul li:hover{
+    background: none;
+    font-size: 12px;
+}
+.leftbar ul li.leftactive{
+    background: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #4ac0e0
+}
+
+/*左边侧栏结束*/
+
+/*右侧栏开始*/
+.rightbar{
+    width: 36px;
+    border-top: 1px solid #e6e6e6;
+    position: fixed;
+    z-index: 9999;
+    right: 50%;
+    top: 48%;
+    margin-right: -650px;
+    margin-top: -115px;
+}
+.rightbar ul {
+    font-family: arial, "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+}
+.rightbar ul li{
+    position: relative;
+}
+
+.rightbar ul li>a{  /*a 标签共有属性*/
+    background-color: #fff;
+    display: block;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+    color: #fff;
+    text-indent: -9999px;
+}
+/*隐藏信息开始*/
+/*隐藏信息结束*/
+.rightbar ul li .phoneshow,.askshow{
+    width: 200px;
+    position: absolute;
+    right: 35px;
+    top: -1px;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: none;
+    /*background-color: red;*/
+    /*height: 200px;*/
+}
+.rightbar ul li dl{
+    zoom: 1;
+}
+.rightbar ul li dl dt{
+    display: inline-block;
+    width: 65px;
+    height: 45px;
+    float: left;
+    border-bottom: 1px solid #e6e6e6;
+}
+.rightbar ul li dl dd{
+    width: 130px;
+    padding: 7px 0 0 5px;
+    height: 38px;
+    line-height: 16px;
+    color: #6f7170;
+    float: left;
+    border-bottom: 1px solid #e6e6e6;
+}
+/*右侧热线隐藏图标显示*/
+.rightbar ul li .phoneshow .lenovo{
+    background: url("../images/jingling.png")no-repeat -1px -527px;
+}
+.rightbar ul li .phoneshow .thinkpad{
+    background: url("../images/jingling.png")no-repeat -66px -526px;
+}
+.rightbar ul li .phoneshow .phone{
+    background: url("../images/jingling.png")no-repeat -129px -525px;
+}
+.rightbar ul li .phoneshow .service{
+    background: url("../images/jingling.png")no-repeat -196px -525px;
+}
+.rightbar ul li .phoneshow .business{
+    background: url("../images/jingling.png")no-repeat -318px -525px;
+}
+.rightbar ul li .phoneshow .telcard{
+    background: url("../images/jingling.png")no-repeat -356px -480px;
+}
+/*右侧热线隐藏图标显示结束*/
+/*右侧咨询隐藏图标显示开始*/
+.rightbar ul li .askshow .sellbefore{
+    background: url("../images/jingling.png")no-repeat -329px -526px;
+}
+.rightbar ul li .askshow .sellafter{
+    background: url("../images/jingling.png")no-repeat -395px -526px;
+}
+.rightbar ul li .askshow .counselor{
+    background: url("../images/jingling.png")no-repeat -58px -700px;
+}
+/*右侧咨询隐藏图标显示结束*/
+
+/*隐藏信息结束*/
+.rightbar ul li>.phone{
+    background: url("../images/jingling.png") no-repeat -4px -485px;
+}
+.rightbar ul li>.ask{
+    background: url("../images/jingling.png") no-repeat -49px -485px;
+}
+.rightbar ul li .store{
+    background: url("../images/jingling.png") no-repeat -98px -486px;
+}
+.rightbar ul li .backInfo{
+    background: url("../images/jingling.png") no-repeat -192px -486px;
+}
+
+.rightbar ul li>a:hover{
+     text-indent: 0;
+     background: none;
+     background-color: #7ecefc;
+ }
+
+.rightbar .totop {
+    display: block;
+    width: 36px;
+    height: 22px;
+    margin-top: 4px;
+    text-indent: -9999px;
+    background: url("../images/jingling.png") no-repeat -254px -491px;
+    cursor: pointer;
+}
+/*右侧栏结束*/
+    /*6F开始*/
+.six_flo{
+    height: 277px;
+    /*margin-top: 20px;*/
+    padding-top: 20px;
+    background-color: #f5f5f5;
+}
+.six_flo .six_main{
+    height: 42px;
+    line-height: 42px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: arial, "Microsoft YaHei", sans-serif;
+}
+.six_flo .six_main ul li{
+    float: left;
+    margin-right: 12px;
+    position: relative;
+    width: 190px;
+    height: 212px;
+
+}
+/*阴影效果*/
+.six_flo .six_main ul li:hover{
+    box-shadow:0 0px 20px #aaa, 0 0px 20px #aaa, 0 0px 20px #aaa; ;
+}
+/*图片底部信息*/
+.six_flo .six_main ul li .info1,.info2,.info3,.info4,.info5,.info6{
+    position: absolute;
+    bottom: 0;
+    width: 190px;
+    height: 43px;
+    opacity: 0.4;
+}
+.six_flo .six_main ul li .text{
+    position: absolute;
+    bottom: 0;
+    width: 170px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+.six_flo .six_main ul li .text span{
+    float: right;
+    color: white;
+    font-size: 15px;
+    padding-top: 3px;
+}
+.six_flo .six_main ul li  .text .pic1{
+    width: 44px;
+    height: 22px;
+    background: url("../images/jingling.png") no-repeat -170px -72px;
+    margin-top: 11px;
+    float: left;
+}
+.six_flo .six_main ul li  .text .pic2{
+    width: 37px;
+    height: 34px;
+    background: url("../images/jingling.png") no-repeat -227px -67px;
+    float: left;
+}
+.six_flo .six_main ul li  .text .pic3{
+    width: 36px;
+    height: 32px;
+    background: url("../images/jingling.png") no-repeat -170px -106px;
+    float: left;
+}
+.six_flo .six_main ul li  .text .pic4{
+    width: 28px;
+    height: 28px;
+    background: url("../images/jingling.png") no-repeat -220px -109px;
+    margin-top: 8px;
+    float: left;
+}
+.six_flo .six_main ul li  .text .pic5{
+     width: 37px;
+     height: 30px;
+     background: url("../images/jingling.png") no-repeat -264px -107px;
+     margin-top: 5px;
+     float: left;
+ }
+.six_flo .six_main ul li  .text .pic6{
+    width: 32px;
+    height: 27px;
+    background: url("../images/jingling.png") no-repeat -276px -67px;
+    margin-top: 7px;
+    float: left;
+}
+/*6F结束*/
+
+/*底部样式设置*/
+/*上部开始*/
+footer{
+    /*background-color: #f5f5f5;*/
+}
+
+ footer .service{
+    height: 83px;
+    background-color: #f5f5f5;
+     clear: both;
+}
+footer .service .shopping{
+    padding-top: 10px;
+    height: 130px;
+
+}
+footer .service .shopping dl{
+    float: left;
+    height: 140px;
+    padding-right: 148px;
+}
+footer .service .shopping dl dt{
+    line-height: 30px;
+    font-size: 14px;
+    font-family: arial, "Microsoft YaHei", sans-serif;
+    color: #000;
+}
+footer .service .shopping dl  a{
+    font-size: 12px;
+    color: #555;
+}
+footer .service .shopping dl a:hover{
+    color: #000;
+}
+footer .service .shopping dl dd{
+    line-height: 22px;
+}
+/*上部结束*/
+/*下部开始*/
+footer .copyright{
+    height: 68px;
+    background-color: #f5f5f5;
+    padding-top: 25px;
+    clear: both;
+    position: relative;
+}
+footer .copyright .language{
+    width: 123px;
+    height: 19px;
+    background: url("../images/jingling.png") no-repeat -72px -320px;
+    position: absolute;
+    right: 60px;
+    top: 26px;
+    z-index: 99;
+    text-align: right;
+}
+footer .copyright .language select{
+    border: 0;
+    font-family: arial, "Microsoft YaHei", sans-serif;
+    color: #707070;
+    width: 90px;
+    cursor: pointer;
+}
+footer .copyright .language select option{
+    cursor: pointer;
+}
+footer .copyright .language select option a{
+    cursor: pointer;
+}
+footer .copyright .up{
+    padding: 4px 0;
+    color: #6f7170;
+    font-size: 12px;
+    text-align: center;
+}
+footer .copyright a{
+    color: #6f7170;
+    font-size: 12px;
+}
+footer .copyright span{
+    margin: 0 8px;
+}
+footer .copyright .buttom{
+    padding: 4px 0;
+    color: #6f7170;
+    font-size: 12px;
+    text-align: center;
+}
+footer .copyright .buttom a .addr1{
+    display: inline-block;
+    background: url(../images/jingling.png) no-repeat -234px -3px;
+    width: 12px;
+    height: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+footer .copyright .buttom a .addr2{
+    display: inline-block;
+    background: url(../images/jingling.png) no-repeat -248px -3px;
+    width: 12px;
+    height: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+/*下部结束*/

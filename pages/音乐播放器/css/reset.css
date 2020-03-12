@@ -1,0 +1,29 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+*{box-sizing: border-box;}
+img {
+	border: 0;
+	vertical-align: middle;
+}
+a {
+	color: #455569;
+	text-decoration: none;
+	transition: all .1s ease-in-out;
+}
+html, body {
+    background: #d2d5d6;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:after {
+	display: block;
+	content: '';
+	clear: both;
+}

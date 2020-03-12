@@ -1,0 +1,713 @@
+@charset "UTF-8";
+
+/***********************************************/
+/****************  头部开始 ********************/
+/************************************************/
+.hided{
+    -webkit-animation-name: hided;
+    -webkit-transition-timing-function: linear;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes hided {
+    from{opacity: 1; height: 100px;}
+    to{opacity: 0;height: 0px; }
+}
+
+/*头部导航条开始*/
+.nav{
+    width: 100%;
+    height: 38px;
+    background-color: #000;
+}
+.nav .inner_c{
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav_bar{
+    position: relative;
+}
+.nav_ul{
+    margin-left: -10px;
+}
+.nav_ul li{
+    position: relative;
+    float: left;
+    padding: 0 10px;
+    color: #ffffff;
+}
+.nav_ul li em{
+    position: absolute;
+    right: 1px;
+    top: 8px;
+    display: block;
+    width: 1px;
+    font-size: 15px;
+}
+.nav_ul li a{
+    text-align: center;
+    height: 38px;
+    line-height: 39px;
+    color: #fff;
+    font-size: 13px;
+}
+.nav_link_1{
+    width: 90px;
+    position: relative;
+    z-index: 9999;
+    margin-left: 380px;
+
+}
+.nav_link .nav_downarrow{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 13px;
+    margin-left: 4px;
+    background: url("../images/jiling.png") -211px -25px;
+}
+.nav_link_1{
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+    font-family: arial,"微软雅黑",sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+.nav_link .weibo{
+    width: 156px;
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    left: 400px;
+    top: 38px;
+    padding: 8px 0;
+    display: none;
+    background: #ffffff;
+}
+.nav_link ul a{
+    display: block;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 12px;
+}
+.nav_link ul span{
+    width: 31px;
+    height: 31px;
+    float: left;
+    cursor: pointer;
+}
+.nav_link ul em{
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+}
+/*公共类: 精灵图*/
+.nav_jinling{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../images/jiling.png);
+}
+.nav_link ul .icon_1{
+    background-position: -3px -269px;
+}
+.nav_link ul .icon_2{
+    background-position: -38px -270px;
+}
+.nav_link ul .icon_3{
+    background-position: -108px -269px;
+}
+.nav_link ul .icon_4{
+    background-position: -209px -269px;
+}
+.nav_link ul .icon_5{
+    background-position: -176px -269px;
+}
+.nav_link ul .icon_6{
+    background-position: -142px -269px;
+}
+.nav_link ul .icon_7{
+    background-position: -243px -270px;
+}
+.nav_link_2{
+    height: 38px;
+    line-height: 38px;
+    position: absolute;
+    left: 500px;
+    top: 0px;
+    cursor: pointer;
+    font-family: arial,"微软雅黑",sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+.nav_link_2 em{
+    position: absolute;
+    left: -12px;
+    top: -1px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+}
+.nav_link_2 a{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 13px;
+    left: 49px;
+}
+.nav_link .iPhones{
+    width: 250px;
+    height: 120px;
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    left: 495px;
+    top: 38px;
+    z-index: 9999;
+    padding: 8px 0;
+    display: none;
+    background: #ffffff;
+}
+.nav_link ul .iPhone{
+    position: relative;
+    padding-left: 116px;
+    padding-top: 14px;
+}
+.nav_link .iPhone em{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: block;
+    width: 76px;
+    height: 76px;
+    background: url(../images/jiling.png) -88px -592px;
+}
+.nav_link .iPhone .t1{
+    color: #7f807f;
+    font-size: 13px;
+    line-height: 20px;
+}
+.nav_link .iPhone .t2{
+    color: #e2231a;
+    font-size: 13px;
+    line-height: 20px;
+}
+/*导航条右部开始*/
+.nav .nav_r{
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    padding-top: 11px;
+    cursor: pointer;
+    float: right;
+}
+.nav .nav_r li{
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    padding: 0 10px;
+    border-right: 1px solid #fff;
+}
+.nav .nav_r li a{
+    color: #ffffff;
+    font-size: 13px;
+}
+.nav .nav_r .shop{
+    border-right: 0;
+}
+.nav .nav_r li span{
+    font-size: 11px;
+    position: absolute;
+    display: inline-block;
+    background-image: url(../images/jiling.png);
+    background-position: -185px -201px;
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 19px;
+    line-height: 18px;
+    padding-left: 2px;
+    top: -1px;
+    right: -10px;
+    text-align: center;
+}
+/*联想Logo 开始*/
+.nav .logo_box{
+    width: 1200px;
+    height: 38px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+.nav .logo_box .logo{
+    background: url(../images/jiling.png) -4px -363px no-repeat;
+    width: 189px;
+    height: 37px;
+    float: left;
+}
+.nav .logo_box .logo a{
+    text-indent: -9999px;
+    display: block;
+    height: 100%;
+}
+.nav .logo_box .logo_text{
+    float: right;
+    position: relative;
+}
+/*右部搜索框开始*/
+.nav .logo_box .logo_text .search_box{
+    width: 787px;
+    position: relative;
+}
+.nav .logo_box .logo_text a.search_box_img{
+    display: block;
+    float: right;
+    width: 61px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #000;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: #fff;
+    position: relative;
+}
+.nav .logo_box .logo_text a.search_box_img span{
+    display: inline-block;
+    width: 25px;
+    height: 23px;
+    position: absolute;
+    top: 6px;
+    left: 18px;
+    background-image: url(../images/search.png);
+}
+.nav .logo_box .logo_text .search_box input{
+    width: 615px;
+    height: 34px;
+    border: 1px solid #d2d2d2;
+    outline: 0;
+    padding: 0 10px;
+    float: right;
+    line-height: 34px;
+    margin-right: -1px;
+    font: 13.3333px Arial;
+}
+.search_box i, .search_box ul {
+    position: absolute;
+    float: right;
+    right: 72px;
+    top: 9px;
+}
+.search_box ul li{
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+.search_box ul li a{
+    font-size: 12px;
+    color: rgb(112, 112, 112);
+    padding-right: 13px;
+    padding-left: 13px;
+    height: 18px;
+    line-height: 18px;
+    display: inline-block;
+    font-family: "微软雅黑";
+    margin-left: 10px;
+    background: rgb(238, 238, 238);
+}
+.nav_search{
+    height: 56px;
+    position: relative;
+}
+.nav_search .ad{
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 200px;
+    height: 48px;
+    overflow: hidden;
+}
+/*左侧商品详细分类开始*/
+.nav_search .nav_search_box{
+    width: 1000px;
+    height: 56px;
+    margin: 0 auto;
+    padding-left: 200px;
+}
+.nav_search_box ul{
+
+}
+.nav_search_box ul li{
+    float: left;
+    padding-right: 54px;
+    line-height: 56px;
+    position: relative;
+}
+.nav_search_box ul li a{
+    font-size: 17px;
+    color: #000;
+    vertical-align: middle;
+    line-height: 66px;
+    height: 56px;
+    float: left;
+}
+.nsb_new,.nsb_patner{
+    width: 32px;
+    background-position: -275px -198px;
+    top: 9px;
+    height: 21px;
+    position: absolute;
+}
+.nsb_patner{
+    background-position: -268px -3px;
+}
+.nsb_text{
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    background: #fff;
+    z-index: 333;
+    left: -72px;
+    top: 50px;
+}
+
+/*中部banner 通栏广告开始*/
+.nav_content{
+    zoom: 1;
+}
+.nav_cfl{
+    float: left;
+}
+.nav_cl{
+    width: 190px;
+    position: relative;
+}
+.nav_cl .nav_clist{
+    position: relative;
+    width: 190px;
+    height: 364px;
+    border-left: 1px solid #e6e6e6;
+    float: left;
+    z-index: 333;
+    border-top: 1px solid #e6e6e6;
+}
+
+.list_name a{
+    color: #000;
+}
+
+.list_name .list_nm{
+    border-bottom: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    font-size: 17px;
+    position: relative;
+    padding: 12px 15px 14.5px 20px;
+    font-weight: 400;
+    display: block;
+    color: #000000;
+}
+.list_icon{
+    background-position: -84px -36px;
+    display: inline-block;
+    background-image: url(../images/jiling.png);
+    background-repeat: no-repeat;
+    right: 15px;
+    top: 21px;
+    width: 6px;
+    height: 9px;
+    position: absolute;
+}
+.list_name .list_content{
+    width: 934px;
+    height: 343px;
+    background: #f7f7f7;
+    position: absolute;
+    left: 190px;
+    top: -1px;
+    padding: 0 22px 20px 52px;
+    /*display: none;*/
+    z-index: 333;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+}
+.list_content .list_1t{
+    width: 630px;
+    float: left;
+    margin-top: 20px;
+}
+.list_1t .list_1ta{
+    margin-top: 15px;
+}
+.list_1ta p{
+    font-size: 13px;
+    color: #000;
+    font-family: arial,"微软雅黑",sans-serif;
+}
+.list_1t ul{
+    margin-left: 55px;
+    border-bottom: 1px solid #e5e5e5;
+    width: 575px;
+    padding-bottom: 5px;
+    padding-top: 2px;
+}
+.list_1t ul li{
+    font-size: 12px;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+}
+.list_1t ul li a{
+    border-left: 1px solid #e5e5e5;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #000;
+    white-space: nowrap;
+}
+.list_rt{
+    width: 252px;
+    float: right;
+    margin-top: 17px;
+}
+.shop_banner_c{
+    width: 770px;
+    margin: 0 10px;
+    position: relative;
+}
+.shop_banner_c .wrap{
+    width: 770px;
+    height: 365px;
+    position: relative;
+    overflow: hidden;
+}
+.wrap ul{
+    position: relative;
+}
+.wrap ul li{
+    width: 770px;
+    height: 365px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*z-index: 1;*/
+    transition: all .5s linear;
+}
+.wrap ul li a img{
+    height: 365px;
+    width: 770px;
+    border: none;
+    vertical-align: top;
+}
+.dots{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    z-index: 333;
+    width: 100%;
+}
+.dots ul{
+    display: block;
+    position: absolute;
+    left: 385px;
+    top: 0;
+    list-style: none;
+    z-index: 333;
+}
+.dots ul li{
+    float: left;
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    border-radius: 50%;
+    background: wheat;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
+
+}
+.active1{
+    float: left;
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    border-radius: 50%;
+    background: wheat;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 333;
+}
+
+.lunbo_left_btn{
+    float: left;
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    left: 0px;
+    top: 148px;
+    background-position: -88px -192px;
+    display: block;
+    z-index: 333;
+}
+.lunbo_right_btn {
+    float: right;
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    right: 0px;
+    top: 148px;
+    background-position: -130px -192px;
+    display: block;
+    z-index: 333;
+}
+/*中部右侧新闻广告*/
+.shop_news{
+    position: relative;
+    width: 220px;
+}
+.shop_news .shop_right_top{
+    position: relative;
+}
+.shop_right_top .horn_box{
+    width: 220px;
+    background: #fff;
+    position: relative;
+    float: left;
+    overflow: hidden;
+}
+.horn_box .horn_cont{
+    border: 1px solid #e6e6e6;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    position: relative;
+    height: 61px;
+    overflow: hidden;
+}
+.horn_cont ul{
+    height: 60px;
+    position: absolute;
+}
+.horn_cont ul li{
+    text-indent: 20px;
+    height: 60px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.horn_box .horn_cont .horn_ring{
+    position: absolute;
+    top: 4px;
+    width: 16px;
+    height: 13px;
+    background: url(http://pic.shop.lenovo.com.cn/g1/M00/00/F0/CmBZD1ZynUyAUnWjAAGn0mxLsoI703.png) -299px -320px;
+}
+
+
+
+.shop_right_down .horn_main{
+    width: 218px;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 12px;
+}
+.horn_main h2 {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 36px;
+    border-bottom: 1px dashed #e6e6e6;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+.horn_main h2 span {
+    float: left;
+}
+.horn_main h2 a {
+    float: right;
+    color: #000;
+    font-size: 12px;
+}
+.horn_main ul {
+    padding-top: 9px;
+    padding-right: 7px;
+    padding-left: 3px;
+    background: url(http://pic.shop.lenovo.com.cn/g1/M00/00/7B/CmBZEFZcEAeAchfVAAAG-2B8lnY220.gif) no-repeat center center;
+}
+.horn_main ul li {
+    overflow: hidden;
+    background: #fff;
+}
+.horn_main ul li a {
+    font-size: 12px;
+    color: #000;
+    display: block;
+    overflow: hidden;
+    line-height: 34px;
+    height: 34px;
+}
+.nav a:hover{
+    color: #C81623;
+}
+.nav_ul li a:hover{
+    color: #C81623 !important;
+}
+.nav_r li a:hover{
+    color: #C81623;
+}
+
+
+.shop_banner_c .lunbo_arrow_btn{
+    cursor: pointer ;
+}
+/*小圆点公共类*/
+.active2{
+    background-color: black !important;
+    float: left;
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 333;
+}
+/*头部张天爱点击隐藏图*/
+.nav .img_box{
+    margin-top: 2px;
+    position: relative;
+}
+.nav .img_box .hide {
+    background: url(http://m2.lefile.cn/sp/c/css/icons/icon_new.png) -7px -7px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.nav .weibo a em:hover{
+    color: #C81623;
+}
+
+/***********************************************/
+/****************  头部结束 ********************/
+/************************************************/
+
+
+
+

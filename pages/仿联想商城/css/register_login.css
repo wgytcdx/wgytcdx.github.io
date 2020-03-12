@@ -1,0 +1,134 @@
+
+/*<!-- 注册样式设置开始-->*/
+#mask_reg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10000;
+}
+#mask_reg #register_show{
+    width: 430px;
+    height: 360px;
+    background-color: white;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -180px 0 0 -215px;
+    z-index: 20000;
+}
+#mask_reg #register_show h3{
+    height: 38px;
+    background-color: #000;
+    color: white;
+    font: 100 18px/39px "微软雅黑";
+}
+#mask_reg #register_show h3 span{
+    margin-left: 14px;
+}
+.reg_set{
+    border: 1px solid #c2c2c2;
+    text-align: center;
+    color: #000000;
+    font: 14px/30px "微软雅黑";
+    height: 30px;
+    width: 80px;
+    position: absolute;
+}
+.inp_set{
+    height: 30px;
+    width: 280px;
+    border: 1px solid #c2c2c2;
+    position: absolute;
+}
+/*注册样式设置结束*/
+
+/*登录样式设置开始*/
+#mask_log{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10000;
+}
+#mask_log #log_show{
+    width: 430px;
+    height: 340px;
+    background-color: white;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -170px 0 0 -215px;
+    z-index: 20000;
+}
+#mask_log #log_show #common_log{
+    display: block;
+}
+#mask_log #log_show #shortcut_log{
+    display: none;
+}
+#mask_log #log_show #common {
+    height: 40px;
+    width: 215px;
+    float: left;
+    color: red;
+    border-bottom: 3px solid red;
+    background-color: #000000;
+    text-align: center;
+    font:600 16px/40px "微软雅黑";
+}
+#mask_log #log_show #shortcut{
+    height: 40px;
+    width: 215px;
+    float: right;
+    color: white;
+    position: relative;
+    background-color: #000000;
+    text-align: center;
+    font:600 16px/40px "微软雅黑";
+}
+#mask_log #log_show #common_log .com_name{
+    position: absolute;
+    left: 48px;
+    top: 79px;
+    border: 1px solid #c2c2c2;
+    height: 30px;
+    width: 30px;
+    background: url("../images/jiling.png") -245px -315px no-repeat;
+}
+#mask_log #log_show #shortcut_log .short_name{
+    position: absolute;
+    left: 48px;
+    top: 79px;
+    border: 1px solid #c2c2c2;
+    height: 30px;
+    width: 30px;
+    background: url("../images/jiling.png") -245px -315px no-repeat;
+}
+#mask_log #log_show #common_log .com_pwd{
+    position: absolute;
+    left: 48px;
+    top: 117px;
+    border: 1px solid #c2c2c2;
+    height: 30px;
+    width: 30px;
+    background: url("../images/jiling.png") -269px -315px no-repeat;
+}
+#mask_log #log_show #shortcut_log .short_pwd{
+    position: absolute;
+    left: 48px;
+    top: 117px;
+    border: 1px solid #c2c2c2;
+    height: 30px;
+    width: 30px;
+    background: url("../images/jiling.png") -269px -315px no-repeat;
+}
+/*登录样式设置结束*/
