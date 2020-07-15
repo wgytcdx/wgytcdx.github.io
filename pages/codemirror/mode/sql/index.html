@@ -63,9 +63,10 @@ SELECT SQL_NO_CACHE DISTINCT
             <code><a href="?mime=text/x-esper">text/x-esper</a></code>.
         </p>
 <script>
-window.onload = function() {
-  var mime = 'text/x-mariadb';
+window.onload = function () {
+  let mime = 'text/x-mariadb';
   // get mime type
+
   if (window.location.href.indexOf('mime=') > -1) {
     mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
   }
@@ -74,13 +75,15 @@ window.onload = function() {
     indentWithTabs: true,
     smartIndent: true,
     lineNumbers: true,
-    matchBrackets : true,
+    matchBrackets: true,
     autofocus: true,
-    extraKeys: {"Ctrl-Space": "autocomplete"},
-    hintOptions: {tables: {
-      users: ["name", "score", "birthDate"],
-      countries: ["name", "population", "size"]
-    }}
+    extraKeys: { 'Ctrl-Space': 'autocomplete' },
+    hintOptions: {
+      tables: {
+        users: ['name', 'score', 'birthDate'],
+        countries: ['name', 'population', 'size'],
+      },
+    },
   });
 };
 </script>

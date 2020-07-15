@@ -25,7 +25,7 @@ module.exports = {
       filename: '../index.html',
       template: 'index_dev.html',
       minify: {
-        collapseWhitespace: true, // 删除空格、换行
+        collapseWhitespace: false, // 删除空格、换行
       },
     }),
   ],

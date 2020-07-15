@@ -47,7 +47,9 @@
     <h1>Mixed HTML Example</h1>
     <script>
       function jsFunc(arg1, arg2) {
-        if (arg1 && arg2) document.body.innerHTML = "achoo";
+        if (arg1 && arg2) {
+    document.body.innerHTML = 'achoo';
+  }
       }
     </script>
   </body>
@@ -56,16 +58,20 @@
     <script>
       // Define an extended mixed-mode that understands vbscript and
       // leaves mustache/handlebars embedded templates in html mode
-      var mixedMode = {
-        name: "htmlmixed",
-        scriptTypes: [{matches: /\/x-handlebars-template|\/x-mustache/i,
-                       mode: null},
-                      {matches: /(text|application)\/(x-)?vb(a|script)/i,
-                       mode: "vbscript"}]
+      const mixedMode = {
+        name: 'htmlmixed',
+        scriptTypes: [{
+    matches: /\/x-handlebars-template|\/x-mustache/i,
+          mode: null,
+  },
+        {
+    matches: /(text|application)\/(x-)?vb(a|script)/i,
+          mode: 'vbscript',
+  }],
       };
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         mode: mixedMode,
-        selectionPointer: true
+        selectionPointer: true,
       });
     </script>
 

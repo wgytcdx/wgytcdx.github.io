@@ -42,17 +42,17 @@ function hello($who) {
 ?>
 <p>The program says <?= hello("World") ?>.</p>
 <script>
-	alert("And here is some JS code"); // also colored
+	alert('And here is some JS code'); // also colored
 </script>
 </textarea></form>
 
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         lineNumbers: true,
         matchBrackets: true,
-        mode: "application/x-httpd-php",
+        mode: 'application/x-httpd-php',
         indentUnit: 4,
-        indentWithTabs: true
+        indentWithTabs: true,
       });
     </script>
 

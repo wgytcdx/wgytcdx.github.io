@@ -151,114 +151,132 @@
       CodeMirror.on(window, 'hashchange', runHarness);
 
       function esc(str) {
-        return str.replace(/[<&]/, function(ch) { return ch == "<" ? "&lt;" : "&amp;"; });
+        return str.replace(/[<&]/, ch => (ch == '<' ? '&lt;' : '&amp;'));
       }
 
-      var output = document.getElementById("output"),
-          progress = document.getElementById("progress"),
-          progressRan = document.getElementById("progress_ran").childNodes[0],
-          progressTotal = document.getElementById("progress_total").childNodes[0];
-      var count = 0,
-          failed = 0,
-          skipped = 0,
-          bad = "",
-          running = false, // Flag that states tests are running
-          quit = false, // Flag to quit tests ASAP
-          verbose = false; // Adds message for *every* test to output
+      const output = document.getElementById('output');
+const progress = document.getElementById('progress');
+const progressRan = document.getElementById('progress_ran').childNodes[0];
+const progressTotal = document.getElementById('progress_total').childNodes[0];
+      let count = 0;
+let failed = 0;
+let skipped = 0;
+let bad = '';
+let running = false; // Flag that states tests are running
+let quit = false; // Flag to quit tests ASAP
+let verbose = false; // Adds message for *every* test to output
 
-      function runHarness(){
+      function runHarness() {
         if (running) {
           quit = true;
-          setStatus("Restarting tests...", '', true);
-          setTimeout(function(){runHarness();}, 500);
-          return;
+          setStatus('Restarting tests...', '', true);
+          setTimeout(() => {
+      runHarness();
+    }, 500);
+      
+    return;
         }
         filters = [];
         verbose = false;
-        if (window.location.hash.substr(1)){
-          var strings = window.location.hash.substr(1).split(",");
+        if (window.location.hash.substr(1)) {
+          const strings = window.location.hash.substr(1).split(',');
           while (strings.length) {
-            var s = strings.shift();
-            if (s === "verbose")
+            const s = strings.shift();
+            if (s === 'verbose') {
               verbose = true;
-            else
+      } else {
               filters.push(parseTestFilter(decodeURIComponent(s)));
+      }
           }
         }
         quit = false;
         running = true;
-        setStatus("Loading tests...");
+        setStatus('Loading tests...');
         count = 0;
         failed = 0;
         skipped = 0;
-        bad = "";
+        bad = '';
         totalTests = countTests();
-        progressTotal.nodeValue = " of " + totalTests;
+        progressTotal.nodeValue = ` of ${totalTests}`;
         progressRan.nodeValue = count;
         output.innerHTML = '';
-        document.getElementById("testground").innerHTML = "<form>" +
-          "<textarea id=\"code\" name=\"code\"></textarea>" +
-          "<input type=submit value=ok name=submit>" +
-          "</form>";
+        document.getElementById('testground').innerHTML = '<form>'
+    + '<textarea id="code" name="code"></textarea>'
+    + '<input type=submit value=ok name=submit>'
+    + '</form>';
         runTests(displayTest);
       }
 
-      function setStatus(message, className, force){
-        if (quit && !force) return;
-        if (!message) throw("must provide message");
-        var status = document.getElementById("status").childNodes[0];
+      function setStatus(message, className, force) {
+        if (quit && !force) {
+    return;
+  }
+        if (!message) {
+    throw ('must provide message');
+  }
+        const status = document.getElementById('status').childNodes[0];
         status.nodeValue = message;
         status.parentNode.className = className;
       }
-      function addOutput(name, className, code){
-        var newOutput = document.createElement("dl");
-        var newTitle = document.createElement("dt");
+      function addOutput(name, className, code) {
+        const newOutput = document.createElement('dl');
+        const newTitle = document.createElement('dt');
         newTitle.className = className;
         newTitle.appendChild(document.createTextNode(name));
         newOutput.appendChild(newTitle);
-        var newMessage = document.createElement("dd");
+        const newMessage = document.createElement('dd');
         newMessage.innerHTML = code;
         newOutput.appendChild(newTitle);
         newOutput.appendChild(newMessage);
         output.appendChild(newOutput);
       }
       function displayTest(type, name, customMessage) {
-        var message = "???";
-        if (type != "done" && type != "skipped") ++count;
-        progress.style.width = (count * (progress.parentNode.clientWidth - 2) / (totalTests || 1)) + "px";
+        let message = '???';
+        if (type != 'done' && type != 'skipped') {
+    ++count;
+  }
+        progress.style.width = `${count * (progress.parentNode.clientWidth - 2) / (totalTests || 1)}px`;
         progressRan.nodeValue = count;
-        if (type == "ok") {
-          message = "Test '" + name + "' passed";
-          if (!verbose) customMessage = false;
-        } else if (type == "skipped") {
-          message = "Test '" + name + "' skipped";
+        if (type == 'ok') {
+          message = `Test '${name}' passed`;
+          if (!verbose) {
+      customMessage = false;
+    }
+        } else if (type == 'skipped') {
+          message = `Test '${name}' skipped`;
           ++skipped;
-          if (!verbose) customMessage = false;
-        } else if (type == "expected") {
-          message = "Test '" + name + "' failed as expected";
-          if (!verbose) customMessage = false;
-        } else if (type == "error" || type == "fail") {
+          if (!verbose) {
+      customMessage = false;
+    }
+        } else if (type == 'expected') {
+          message = `Test '${name}' failed as expected`;
+          if (!verbose) {
+      customMessage = false;
+    }
+        } else if (type == 'error' || type == 'fail') {
           ++failed;
-          message = "Test '" + name + "' failed";
-        } else if (type == "done") {
+          message = `Test '${name}' failed`;
+        } else if (type == 'done') {
           if (failed) {
-            type += " fail";
-            message = failed + " failure" + (failed > 1 ? "s" : "");
+            type += ' fail';
+            message = `${failed} failure${failed > 1 ? 's' : ''}`;
           } else if (count < totalTests) {
             failed = totalTests - count;
-            type += " fail";
-            message = failed + " failure" + (failed > 1 ? "s" : "");
+            type += ' fail';
+            message = `${failed} failure${failed > 1 ? 's' : ''}`;
           } else {
-            type += " ok";
-            message = "All passed";
+            type += ' ok';
+            message = 'All passed';
             if (skipped) {
-              message += " (" + skipped + " skipped)";
+              message += ` (${skipped} skipped)`;
             }
           }
           progressTotal.nodeValue = '';
           customMessage = true; // Hack to avoid adding to output
         }
-        if (verbose && !customMessage)  customMessage = message;
+        if (verbose && !customMessage) {
+    customMessage = message;
+  }
         setStatus(message, type);
         if (customMessage && customMessage.length > 0) {
           addOutput(name, type, customMessage);

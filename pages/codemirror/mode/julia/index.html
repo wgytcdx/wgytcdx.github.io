@@ -182,12 +182,11 @@ true false enumerate
 
     </textarea></div>
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: {name: "julia",
-               },
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: { name: 'julia' },
         lineNumbers: true,
         indentUnit: 4,
-        matchBrackets: true
+        matchBrackets: true,
       });
     </script>
 

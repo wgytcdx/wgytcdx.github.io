@@ -156,22 +156,26 @@ def pairwise_cython(double[:, ::1] X):
 </textarea></div>
 
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: {name: "python",
-               version: 3,
-               singleLineStringErrors: false},
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: {
+    name: 'python',
+          version: 3,
+          singleLineStringErrors: false,
+  },
         lineNumbers: true,
         indentUnit: 4,
-        matchBrackets: true
-    });
+        matchBrackets: true,
+});
 
-    CodeMirror.fromTextArea(document.getElementById("code-cython"), {
-        mode: {name: "text/x-cython",
-               version: 2,
-               singleLineStringErrors: false},
+CodeMirror.fromTextArea(document.getElementById('code-cython'), {
+        mode: {
+    name: 'text/x-cython',
+          version: 2,
+          singleLineStringErrors: false,
+  },
         lineNumbers: true,
         indentUnit: 4,
-        matchBrackets: true
+        matchBrackets: true,
       });
     </script>
     <h2>Configuration Options for Python mode:</h2>

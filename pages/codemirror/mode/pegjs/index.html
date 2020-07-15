@@ -54,9 +54,9 @@ integer "integer"
 
 letter = [a-z]+</textarea></form>
       <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-          mode: {name: "pegjs"},
-          lineNumbers: true
+        const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+          mode: { name: 'pegjs' },
+          lineNumbers: true,
         });
       </script>
       <h3>The PEG.js Mode</h3>

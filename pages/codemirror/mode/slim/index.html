@@ -73,16 +73,16 @@ a.slim href="work" disabled=false running==:atom Text <b>bold</b>
 
   </textarea></form>
   <script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
       lineNumbers: true,
-      theme: "ambiance",
-      mode: "application/x-slim"
+      theme: 'ambiance',
+      mode: 'application/x-slim',
     });
     $('.CodeMirror').resizable({
-      resize: function() {
-        editor.setSize($(this).width(), $(this).height());
-        //editor.refresh();
-      }
+      resize() {
+    editor.setSize($(this).width(), $(this).height());
+    // editor.refresh();
+  },
     });
   </script>
 

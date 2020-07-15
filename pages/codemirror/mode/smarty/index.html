@@ -93,7 +93,7 @@ Nested tags {$foo={counter one=1 two={inception}}+3} are now valid in Smarty 3.
 
 <script>
 function test() {
-  console.log("Smarty 3 permits single curly braces followed by whitespace to NOT slip into Smarty mode.");
+  console.log('Smarty 3 permits single curly braces followed by whitespace to NOT slip into Smarty mode.');
 }
 </script>
 
@@ -117,21 +117,21 @@ Smarty "dot" syntax (note: embedded {} are used to address ambiguities):
 {$object->method1($x)->method2($y)}</textarea>
 
 <script>
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
   lineNumbers: true,
-  mode: "smarty"
+  mode: 'smarty',
 });
-var editor = CodeMirror.fromTextArea(document.getElementById("code2"), {
+var editor = CodeMirror.fromTextArea(document.getElementById('code2'), {
   lineNumbers: true,
   mode: {
-    name: "smarty",
-    leftDelimiter: "{--",
-    rightDelimiter: "--}"
-  }
+    name: 'smarty',
+    leftDelimiter: '{--',
+    rightDelimiter: '--}',
+  },
 });
-var editor = CodeMirror.fromTextArea(document.getElementById("code3"), {
+var editor = CodeMirror.fromTextArea(document.getElementById('code3'), {
   lineNumbers: true,
-  mode: {name: "smarty", version: 3, baseMode: "text/html"}
+  mode: { name: 'smarty', version: 3, baseMode: 'text/html' },
 });
 </script>
 

@@ -42,9 +42,10 @@ ORDER BY COUNT(*) DESC , friend_of_friend.name
             <code><a href="?mime=application/x-cypher-query">application/x-cypher-query</a></code>
         </p>
 <script>
-window.onload = function() {
-  var mime = 'application/x-cypher-query';
+window.onload = function () {
+  let mime = 'application/x-cypher-query';
   // get mime type
+
   if (window.location.href.indexOf('mime=') > -1) {
     mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
   }
@@ -53,9 +54,9 @@ window.onload = function() {
     indentWithTabs: true,
     smartIndent: true,
     lineNumbers: true,
-    matchBrackets : true,
+    matchBrackets: true,
     autofocus: true,
-    theme: 'neo'
+    theme: 'neo',
   });
 };
 </script>

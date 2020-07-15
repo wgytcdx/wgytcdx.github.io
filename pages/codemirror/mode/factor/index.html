@@ -60,13 +60,13 @@ MAIN: start-time-server
   </form>
 
 <script>
-  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     lineNumbers: true,
     lineWrapping: true,
     indentUnit: 2,
     tabSize: 2,
     autofocus: true,
-    mode: "text/x-factor"
+    mode: 'text/x-factor',
   });
 </script>
 <p/>

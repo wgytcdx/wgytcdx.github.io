@@ -142,10 +142,10 @@ exten => 8500,n,Goto(s,6)
 
     </textarea></form>
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: "text/x-asterisk",
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: 'text/x-asterisk',
         matchBrackets: true,
-        lineNumber: true
+        lineNumber: true,
       });
     </script>
 

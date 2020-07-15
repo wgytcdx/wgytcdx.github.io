@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>有趣的前端demo</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="src/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            transition: 300ms;
+            transform: scale(0.8);
+        }
+
+        .swiper-slide a {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active {
+            transform: scale(1);
+        }
+
+        .swiper-slide1 {
+            background-image: url('../../src/images/404断电.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide2 {
+            background-image: url('../../src/images/svg加载动画.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide3 {
+            background-image: url('../../src/images/柠檬水.png');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide4 {
+            background-image: url('../../src/images/太阳系.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide5 {
+            background-image: url('../../src/images/怪异博士.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide6 {
+            background-image: url('../../src/images/表情按钮.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide7 {
+            background-image: url('../../src/images/不可点击的按钮.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide8 {
+            background-image: url('../../src/images/魔方.jpg');
+            background-size: 100% 100%;
+        }
+
+        .swiper-slide9 {
+            background-image: url('../../src/images/egg.jpg');
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide1"><a href="./1.404断电错误/index.html"></a></div>
+            <div class="swiper-slide swiper-slide2"><a href="./2.svg加载动画/index.html"></a></div>
+            <div class="swiper-slide swiper-slide3"><a href="./3.纯css-柠檬水/index.html"></a></div>
+            <div class="swiper-slide swiper-slide4"><a href="./4.太阳系/index.html"></a></div>
+            <div class="swiper-slide swiper-slide5"><a href="./5.纯css-怪异博士/index.html"></a></div>
+            <div class="swiper-slide swiper-slide6"><a href="./6.表情按钮/index.html"></a></div>
+            <div class="swiper-slide swiper-slide7"><a href="./7.按钮不可点击/index.html"></a></div>
+            <div class="swiper-slide swiper-slide8"><a href="./8.魔方/index.html"></a></div>
+            <div class="swiper-slide swiper-slide9"><a href="./9.【彩蛋】love-demo/love.html"></a></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="src/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+
+        const swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+
+    </script>
+</body>
+
+</html>

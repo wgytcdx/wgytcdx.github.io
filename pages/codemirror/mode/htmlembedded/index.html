@@ -38,16 +38,16 @@ function hello(who) {
 This is an example of EJS (embedded javascript)
 <p>The program says <%= hello("world") %>.</p>
 <script>
-	alert("And here is some normal JS code"); // also colored
+	alert('And here is some normal JS code'); // also colored
 </script>
 </textarea></form>
 
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         lineNumbers: true,
-        mode: "application/x-ejs",
+        mode: 'application/x-ejs',
         indentUnit: 4,
-        indentWithTabs: true
+        indentWithTabs: true,
       });
     </script>
 

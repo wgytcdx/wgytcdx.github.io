@@ -98,13 +98,13 @@ endclass
 </textarea></div>
 
 <script>
-  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     lineNumbers: true,
     matchBrackets: true,
     mode: {
-      name: "verilog",
-      noIndentKeywords: ["package"]
-    }
+      name: 'verilog',
+      noIndentKeywords: ['package'],
+    },
   });
 </script>
 

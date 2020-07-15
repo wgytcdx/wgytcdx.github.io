@@ -80,11 +80,11 @@ StringStream.prototype = {
 </textarea></div>
 
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         lineNumbers: true,
         matchBrackets: true,
-        continueComments: "Enter",
-        extraKeys: {"Ctrl-Q": "toggleComment"}
+        continueComments: 'Enter',
+        extraKeys: { 'Ctrl-Q': 'toggleComment' },
       });
     </script>
 

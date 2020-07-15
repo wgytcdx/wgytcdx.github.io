@@ -89,15 +89,15 @@ See http://github.github.com/github-flavored-markdown/.
 </textarea></form>
 
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         mode: {
-          name: "gfm",
+          name: 'gfm',
           tokenTypeOverrides: {
-            emoji: "emoji"
-          }
+            emoji: 'emoji',
+          },
         },
         lineNumbers: true,
-        theme: "default"
+        theme: 'default',
       });
     </script>
 
