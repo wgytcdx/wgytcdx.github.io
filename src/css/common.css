@@ -4,7 +4,7 @@ html{
 }
 .wrapper{
 	max-width: 1300px;
-	padding: 60px;
+	padding-top: 30px;
 	margin: 0 auto;	
 }
 html .btn{

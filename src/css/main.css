@@ -513,7 +513,6 @@ article.dim{
 /**====footer====**/
 .siteHome-wrapper footer{
 	background: #272D35;
-	min-height: 280px;
 	padding: 20px 0;
 	color: #fff;
 	text-align: center;
@@ -525,35 +524,35 @@ article.dim{
 .siteHome-wrapper footer .soc a{
 	position: relative;
 	display: inline-block;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
 	border-radius: 50%;
 	text-align: center;
-	background: red;
+	/* background: red; */
 }
 .siteHome-wrapper footer .soc span{
 	font-size: 33px;
 	color: #fff;
 }
 .siteHome-wrapper footer .soc .github{
-	background: #4da7de;
+	/* background: #4da7de; */
 }
 .siteHome-wrapper footer .soc .shu{
-	background: #e02a20;
+	/* background: #e02a20; */
 	margin: 0px 15px;
 }
 .siteHome-wrapper footer .soc .email{
-	background: #9c7c6e;
+	/* background: #9c7c6e; */
 }
 .siteHome-wrapper footer .soc a:hover{
 	z-index: 2;
 	opacity: 0.8;
-	background: #e9dba1;
+	background: #fff;
 }
 .siteHome-wrapper footer small{
 	display: block;
-	margin-top: 50px;
+	margin-top: 10px;
 	color: #758599;
 	font-size: 0.85rem;
 	line-height: 1.8rem;
@@ -562,7 +561,7 @@ article.dim{
 	color: #3195C2;
 }
 .siteHome-wrapper footer small a:hover{
-	background: #e9dba1;
+	/* background: #e9dba1; */
 	color: #E0CB77;
 }
 /**====sub-footer====**/
@@ -754,4 +753,25 @@ article.dim{
 }
 body.remodal{
 	overflow: hidden;
+}
+.icon-github{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../dist/img/github.png');
+	background-size: 100% 100%;
+}
+.icon-shu{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../dist/img/jianshu.ico');
+	background-size: 100% 100%;
+}
+.icon-email{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../dist/img/weibo.png');
+	background-size: 100% 100%;
 }
