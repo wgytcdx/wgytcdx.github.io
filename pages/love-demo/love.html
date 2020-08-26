@@ -115,7 +115,6 @@
 </head>
 
 <body>
-    <!-- <canvas id="c" height="100%" width="100%" style="position: absolute;left:20px;bottom:20px"></canvas> -->
     <div id="main">
         <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a
                 href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a
@@ -160,224 +159,166 @@
     </div>
 
     <script>
-    </script>
-
-    <script>
         (function () {
-          const canvas = $('#canvas');
+            var canvas = $('#canvas');
 
-          if (!canvas[0].getContext) {
-            $('#error').show();
-        
-    return false;
-          }
-
-          const width = canvas.width();
-          const height = canvas.height();
-
-          canvas.attr('width', width);
-          canvas.attr('height', height);
-
-          const opts = {
-            seed: {
-              x: width / 2 - 20,
-              color: 'rgb(190, 26, 37)',
-              scale: 2,
-            },
-            branch: [
-              [535, 680, 570, 250, 500, 200, 30, 100, [
-                [540, 500, 455, 417, 340, 400, 13, 100, [
-                  [450, 435, 434, 430, 394, 395, 2, 40],
-                ]],
-                [550, 445, 600, 356, 680, 345, 12, 100, [
-                  [578, 400, 648, 409, 661, 426, 3, 80],
-                ]],
-                [539, 281, 537, 248, 534, 217, 3, 40],
-                [546, 397, 413, 247, 328, 244, 9, 80, [
-                  [427, 286, 383, 253, 371, 205, 2, 40],
-                  [498, 345, 435, 315, 395, 330, 4, 60],
-                ]],
-                [546, 357, 608, 252, 678, 221, 6, 100, [
-                  [590, 293, 646, 277, 648, 271, 2, 80],
-                ]],
-              ]],
-            ],
-            bloom: {
-              num: 700,
-              width: 1080,
-              height: 650,
-            },
-            footer: {
-              width: 1200,
-              height: 5,
-              speed: 10,
-            },
-          };
-
-          const tree = new Tree(canvas[0], width, height, opts);
-          const { seed } = tree;
-          const foot = tree.footer;
-          let hold = 1;
-
-          canvas.click((e) => {
-        const offset = canvas.offset(); let x; let
-      y;
-        x = e.pageX - offset.left;
-        y = e.pageY - offset.top;
-        if (seed.hover(x, y)) {
-              hold = 0;
-              canvas.unbind('click');
-              canvas.unbind('mousemove');
-              canvas.removeClass('hand');
-        }
-  }).mousemove((e) => {
-        const offset = canvas.offset(); let x; let
-      y;
-        x = e.pageX - offset.left;
-        y = e.pageY - offset.top;
-        canvas.toggleClass('hand', seed.hover(x, y));
-  });
-
-          const seedAnimate = eval(Jscex.compile('async', () => {
-        seed.draw();
-        while (hold) {
-              $await(Jscex.Async.sleep(10));
-        }
-        while (seed.canScale()) {
-              seed.scale(0.95);
-              $await(Jscex.Async.sleep(10));
-        }
-        while (seed.canMove()) {
-              seed.move(0, 2);
-              foot.draw();
-              $await(Jscex.Async.sleep(10));
-        }
-  }));
-
-          const growAnimate = eval(Jscex.compile('async', () => {
-        do {
-              tree.grow();
-              $await(Jscex.Async.sleep(10));
-        } while (tree.canGrow());
-  }));
-
-          const flowAnimate = eval(Jscex.compile('async', () => {
-        do {
-              tree.flower(2);
-              $await(Jscex.Async.sleep(10));
-        } while (tree.canFlower());
-  }));
-
-          const moveAnimate = eval(Jscex.compile('async', () => {
-        tree.snapshot('p1', 240, 0, 610, 680);
-        while (tree.move('p1', 500, 0)) {
-              foot.draw();
-              $await(Jscex.Async.sleep(10));
-        }
-        foot.draw();
-        tree.snapshot('p2', 500, 0, 610, 680);
-
-        // 会有闪烁不得意这样做, (＞﹏＜)
-        canvas.parent().css('background', `url(${tree.toDataURL('image/png')})`);
-        canvas.css('background', '#ffe');
-        $await(Jscex.Async.sleep(300));
-        canvas.css('background', 'none');
-  }));
-
-          const jumpAnimate = eval(Jscex.compile('async', () => {
-        const { ctx } = tree;
-        while (true) {
-              tree.ctx.clearRect(0, 0, width, height);
-              tree.jump();
-              foot.draw();
-              $await(Jscex.Async.sleep(25));
-        }
-  }));
-
-          const textAnimate = eval(Jscex.compile('async', () => {
-        const together = new Date();
-        together.setFullYear(2017, 7, 28);
-        together.setHours(19);
-        together.setMinutes(0);
-        together.setSeconds(0);
-        together.setMilliseconds(0);
-
-        $('#code').show().typewriter();
-        $('#clock-box').fadeIn(500);
-        while (true) {
-              timeElapse(together);
-              $await(Jscex.Async.sleep(1000));
-        }
-  }));
-
-          const runAsync = eval(Jscex.compile('async', () => {
-        $await(seedAnimate());
-        $await(growAnimate());
-        $await(flowAnimate());
-        $await(moveAnimate());
-
-        textAnimate().start();
-
-        $await(jumpAnimate());
-  }));
-
-          runAsync().start();
-        }());
-
-
-    </script>
-
-    <script>
-
-        var collapsed = true;
-
-        function toggle() {
-            var fs = top.document.getElementsByTagName('frameset')[0];
-            var f = fs.getElementsByTagName('frame');
-            if (collapsed) {
-                fs.rows = '250px,*';
-                // enable resizing of frames in firefox/opera
-                fs.noResize = false;
-                f[0].noResize = false;
-                f[1].noResize = false;
-            } else {
-                fs.rows = '30px,*';
-                // disable resizing of frames in firefox/opera
-                fs.noResize = true;
-                f[0].noResize = true;
-                f[1].noResize = true;
+            if (!canvas[0].getContext) {
+                $("#error").show();
+                return false;
             }
-            collapsed = !collapsed;
-        }
 
-        var b = document.body;
-        var c = document.getElementById('c');
-        var a = c.getContext('2d');
-        document.body.clientWidth; // fix bug in chrome.
-        // start of submission //
-        M = Math;
-        Q = M.random;
-        J = [];
-        U = 16;
-        T = M.sin;
-        E = M.sqrt;
-        for (O = k = 0; x = z = j = i = k < 200;) with (M[k] = k ? c.cloneNode(0) : c) {
-            width = height = k ? 32 : W = 446;
-            with (getContext('2d')) if (k > 10 | !k) for (font = '60px Impact', V = 'rgba('; I = i * U, fillStyle = k ? k == 13 ? V + '205,205,215,.15)' : V + (147 + I) + ',' + (k % 2 ? 128 + I : 0) + ',' + I + ',.5)' : '#cca', i < 7;) beginPath(fill(arc(U - i / 3, 24 - i / 2, k == 13 ? 4 - (i++) / 2 : 8 - i++, 0, M.PI * 2, 1))); else for (; x = T(i), y = Q() * 2 - 1, D = x * x + y * y, B = E(D - x / .9 - 1.5 * y + 1), R = 67 * (B + 1) * (L = k / 9 + .8) >> 1, i++ < W;) if (D < 1) beginPath(strokeStyle = V + R + ',' + (R + B * L >> 0) + ',40,.1)'), moveTo(U + x * 8, U + y * 8), lineTo(U + x * U, U + y * U), stroke();
-            for (y = H = k + E(k++) * 25, R = Q() * W; P = 3, j < H;) J[O++] = [x += T(R) * P + Q() * 6 - 3, y += Q() * U - 8, z += T(R - 11) * P + Q() * 6 - 3, j / H * 20 + ((j += U) > H & Q() > .8 ? Q(P = 9) * 4 : 0) >> 1]
-        }
-        setInterval(function G(m, l) {
-            A = T(D - 11);
-            if (l) return (m[2] - l[2]) * A + (l[0] - m[0]) * T(D);
-            a.clearRect(0, 0, W, W);
-            J.sort(G);
-            for (i = 0; L = J[i++]; a.drawImage(M[L[3] + 1], 207 + L[0] * A + L[2] * T(D) >> 0, L[1] >> 1)) {
-                if (i == 2e3) a.fillText('Merry Christmas!', U, 345);
-                if (!(i % 7)) a.drawImage(M[13], ((157 * (i * i) + T(D * 5 + i * i) * 5) % W) >> 0, ((113 * i + (D * i) / 60) % (290 + i / 99)) >> 0);
+            var width = canvas.width();
+            var height = canvas.height();
+
+            canvas.attr("width", width);
+            canvas.attr("height", height);
+
+            var opts = {
+                seed: {
+                    x: width / 2 - 20,
+                    color: "rgb(190, 26, 37)",
+                    scale: 2
+                },
+                branch: [
+                    [535, 680, 570, 250, 500, 200, 30, 100, [
+                        [540, 500, 455, 417, 340, 400, 13, 100, [
+                            [450, 435, 434, 430, 394, 395, 2, 40]
+                        ]],
+                        [550, 445, 600, 356, 680, 345, 12, 100, [
+                            [578, 400, 648, 409, 661, 426, 3, 80]
+                        ]],
+                        [539, 281, 537, 248, 534, 217, 3, 40],
+                        [546, 397, 413, 247, 328, 244, 9, 80, [
+                            [427, 286, 383, 253, 371, 205, 2, 40],
+                            [498, 345, 435, 315, 395, 330, 4, 60]
+                        ]],
+                        [546, 357, 608, 252, 678, 221, 6, 100, [
+                            [590, 293, 646, 277, 648, 271, 2, 80]
+                        ]]
+                    ]]
+                ],
+                bloom: {
+                    num: 700,
+                    width: 1080,
+                    height: 650,
+                },
+                footer: {
+                    width: 1200,
+                    height: 5,
+                    speed: 10,
+                }
             }
-            D += .02
-        }, 1)
-    // end of submission //
+
+            var tree = new Tree(canvas[0], width, height, opts);
+            var seed = tree.seed;
+            var foot = tree.footer;
+            var hold = 1;
+
+            canvas.click(function (e) {
+                var offset = canvas.offset(), x, y;
+                x = e.pageX - offset.left;
+                y = e.pageY - offset.top;
+                if (seed.hover(x, y)) {
+                    hold = 0;
+                    canvas.unbind("click");
+                    canvas.unbind("mousemove");
+                    canvas.removeClass('hand');
+                }
+            }).mousemove(function (e) {
+                var offset = canvas.offset(), x, y;
+                x = e.pageX - offset.left;
+                y = e.pageY - offset.top;
+                canvas.toggleClass('hand', seed.hover(x, y));
+            });
+
+            var seedAnimate = eval(Jscex.compile("async", function () {
+                seed.draw();
+                while (hold) {
+                    $await(Jscex.Async.sleep(10));
+                }
+                while (seed.canScale()) {
+                    seed.scale(0.95);
+                    $await(Jscex.Async.sleep(10));
+                }
+                while (seed.canMove()) {
+                    seed.move(0, 2);
+                    foot.draw();
+                    $await(Jscex.Async.sleep(10));
+                }
+            }));
+
+            var growAnimate = eval(Jscex.compile("async", function () {
+                do {
+                    tree.grow();
+                    $await(Jscex.Async.sleep(10));
+                } while (tree.canGrow());
+            }));
+
+            var flowAnimate = eval(Jscex.compile("async", function () {
+                do {
+                    tree.flower(2);
+                    $await(Jscex.Async.sleep(10));
+                } while (tree.canFlower());
+            }));
+
+            var moveAnimate = eval(Jscex.compile("async", function () {
+                tree.snapshot("p1", 240, 0, 610, 680);
+                while (tree.move("p1", 500, 0)) {
+                    foot.draw();
+                    $await(Jscex.Async.sleep(10));
+                }
+                foot.draw();
+                tree.snapshot("p2", 500, 0, 610, 680);
+
+                // 会有闪烁不得意这样做, (＞﹏＜)
+                canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+                canvas.css("background", "#ffe");
+                $await(Jscex.Async.sleep(300));
+                canvas.css("background", "none");
+            }));
+
+            var jumpAnimate = eval(Jscex.compile("async", function () {
+                var ctx = tree.ctx;
+                while (true) {
+                    tree.ctx.clearRect(0, 0, width, height);
+                    tree.jump();
+                    foot.draw();
+                    $await(Jscex.Async.sleep(25));
+                }
+            }));
+
+            var textAnimate = eval(Jscex.compile("async", function () {
+                var together = new Date();
+                together.setFullYear(2017, 7, 28);
+                together.setHours(19);
+                together.setMinutes(0);
+                together.setSeconds(0);
+                together.setMilliseconds(0);
+
+                $("#code").show().typewriter();
+                $("#clock-box").fadeIn(500);
+                while (true) {
+                    timeElapse(together);
+                    $await(Jscex.Async.sleep(1000));
+                }
+            }));
+
+            var runAsync = eval(Jscex.compile("async", function () {
+                $await(seedAnimate());
+                $await(growAnimate());
+                $await(flowAnimate());
+                $await(moveAnimate());
+
+                textAnimate().start();
+
+                $await(jumpAnimate());
+            }));
+
+            runAsync().start();
+
+
+        })();
+
 
     </script>
 
