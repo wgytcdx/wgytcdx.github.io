@@ -407,10 +407,34 @@
                 transform: rotate(-360deg);
             }
         }
+
+        .landing__space {
+            position: fixed;
+            z-index: -1;
+            background-color: #000;
+            width: 200vw;
+            height: 200vh;
+            top: 50%;
+            left: 50%;
+            margin-top: -100vh;
+            margin-left: -100vw;
+            animation: logo-rotate 200s linear infinite;
+            background-size: 240px;
+            -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTA2IDkwaDJ2MmgtMnpNNzQgNjNoMXYxaC0xek0yMyA2NmgxdjFoLTF6TTUwIDExMGgxdjFoLTF6TTYzIDEyOGgxdjFoLTF6TTQ1IDE0OWgxdjFoLTF6TTkyIDE1MWgxdjFoLTF6TTU4IDhoMXYxaC0xek0xNDcgMzNoMnYyaC0yek05MSA0M2gxdjFoLTF6TTE2OSAyOWgxdjFoLTF6TTE4MiAxOWgxdjFoLTF6TTE2MSA1OWgxdjFoLTF6TTEzOCA5NWgxdjFoLTF6TTE5OSA3MWgzdjNoLTN6TTIxMyAxNTNoMnYyaC0yek0xMjggMTYzaDF2MWgtMXpNMjA1IDE3NGgxdjFoLTF6TTE1MiAyMDBoMXYxaC0xek01MiAyMTFoMnYyaC0yek0wIDE5MWgxdjFIMHpNMTEwIDE4NGgxdjFoLTF6Ii8+PC9zdmc+);
+        }
+
+        @keyframes logo-rotate {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="landing__space"></div>
     <a style="width: 100px;height: 50px;" href="../index.html">Back</a>
     <div class="solar-syst">
         <div class="sun"></div>
