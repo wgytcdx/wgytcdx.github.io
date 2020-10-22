@@ -221,6 +221,7 @@ header nav h1{
 	height: 100%;
 	position: absolute;
 	top: 0;
+	opacity: .5;
 }
 .siteHome-wrapper .hero:after{
 	position: absolute;
