@@ -30,7 +30,6 @@
 .landing__space {
   position: fixed;
   z-index: -1;
-  background-color: #000;
   width: 200vw;
   height: 200vh;
   top: 50%;

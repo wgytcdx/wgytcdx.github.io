@@ -30,7 +30,8 @@ a {
 body {
 	font-family: "Open Sans","sans-serif";
     font-weight: 100;
-    color: #475261;
+	color: #475261;
+	background-color: rgb(27, 29, 30);
     font-size: 1.3rem;
 }
 /*.clearfix {
