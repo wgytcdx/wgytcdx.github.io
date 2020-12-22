@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin code mirror -->
 <!--下面两个是使用Code Mirror必须引入的-->
-<link rel="stylesheet" href="./lib/codemirror.css"/>
+<link rel="stylesheet" href="./lib/codemirror.css" />
 <script src="./lib/codemirror.js"></script>
 <!--Java代码高亮必须引入-->
 <script src="./lib/clike.js"></script>
@@ -73,7 +73,7 @@
 <script src="../../lib/jquery/jquery-2.2.3.min.js"></script>
 
 <!--支持代码折叠-->
-<link rel="stylesheet" href="./addon/fold/foldgutter.css"/>
+<link rel="stylesheet" href="./addon/fold/foldgutter.css" />
 <script src="./addon/fold/foldcode.js"></script>
 <script src="./addon/fold/foldgutter.js"></script>
 <script src="./addon/fold/brace-fold.js"></script>
@@ -83,25 +83,29 @@
 <!--end Code Mirror -->
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Code Mirror Demo</title>
 </head>
 <style>
-    body,html{
+    body,
+    html {
         width: 100%;
         height: 100%;
         margin: 0;
     }
-    #select{
+
+    #select {
         position: absolute;
         top: 50px;
         right: 50px;
         z-index: 10;
     }
-    .CodeMirror-sizer{
+
+    .CodeMirror-sizer {
         margin-top: 20px;
     }
 </style>
+
 <body>
     <select name="" id="select">
         <option selected>default</option>
@@ -163,6 +167,7 @@
         <option>zenburn</option>
     </select>
 </body>
+
 </html>
 <!-- 示例代码 -->
 <textarea id="code" name="code">
@@ -183,22 +188,22 @@ int getchar(void)
 <script>
     // 根据DOM元素的id构造出一个编辑器
     const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-      // mode: "text/groovy",    //实现groovy代码高亮
-      // mode: "text/x-java", //实现Java代码高亮
-      lineNumbers: true,	// 显示行号
-      theme: 'dracula',	// 设置主题
-      lineWrapping: true,	// 代码折叠
-      foldGutter: true,
-      gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
-      matchBrackets: true,	// 括号匹配
-      // readOnly: true,        //只读
+        // mode: "text/groovy",    //实现groovy代码高亮
+        // mode: "text/x-java", //实现Java代码高亮
+        lineNumbers: true,	// 显示行号
+        theme: 'dracula',	// 设置主题
+        lineWrapping: true,	// 代码折叠
+        foldGutter: true,
+        gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
+        matchBrackets: true,	// 括号匹配
+        // readOnly: true,        //只读
     });
     editor.setSize('calc(100%)', 'calc(100%)');
     $('#select').on('change', () => {
-  const option = $('#select').val();
+        const option = $('#select').val();
 
-  editor.setOption('theme', option);
-});
+        editor.setOption('theme', option);
+    });
 
     // editor.setValue("");    //代码框清空
 

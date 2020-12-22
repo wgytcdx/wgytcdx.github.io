@@ -1,81 +1,109 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-    <title>webgl - dynamic procedural terrain</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <style type="text/css">
-        body {
-            background: #000;
-            color: #999;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            font-family: georgia;
-            font-size:1em;
-            text-align: center;
-        }
+  <title>webgl - dynamic procedural terrain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <style type="text/css">
+    body {
+      background: #000;
+      color: #999;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      font-family: georgia;
+      font-size: 1em;
+      text-align: center;
+    }
 
-        #info { margin-top: 2em	}
+    #info {
+      margin-top: 2em
+    }
 
-        a { color: #fb0; }
+    a {
+      color: #fb0;
+    }
 
-        #footer { width: 100%; margin: 2em auto; text-align: center; position: absolute; bottom: 0 }
-        .h { color: #fb0 }
-        .c { display: inline; margin-left: 1em }
+    #footer {
+      width: 100%;
+      margin: 2em auto;
+      text-align: center;
+      position: absolute;
+      bottom: 0
+    }
 
-        #loading { width: 100%; margin: 2em auto; text-align: center; position: absolute; top: 25em  }
+    .h {
+      color: #fb0
+    }
 
-        #oldie a { color:#da0 }
+    .c {
+      display: inline;
+      margin-left: 1em
+    }
 
-        #play_overlay {
-            position: absolute;
-            font-size: 5em;
-            text-align: center;
-            top: 7em;
-            z-index: 100;
-            width:100%;
-            display: none;
-        }
+    #loading {
+      width: 100%;
+      margin: 2em auto;
+      text-align: center;
+      position: absolute;
+      top: 25em
+    }
 
-        .pbutton {
-            cursor: pointer;
-            color: #fff;
-            border: solid 1px white;
-            width: 7em;
-            margin: 0 auto;
-            padding: 0.5em;
-        }
-    </style>
+    #oldie a {
+      color: #da0
+    }
+
+    #play_overlay {
+      position: absolute;
+      font-size: 5em;
+      text-align: center;
+      top: 7em;
+      z-index: 100;
+      width: 100%;
+      display: none;
+    }
+
+    .pbutton {
+      cursor: pointer;
+      color: #fff;
+      border: solid 1px white;
+      width: 7em;
+      margin: 0 auto;
+      padding: 0.5em;
+    }
+  </style>
 </head>
 
 <body>
-<div id="container"></div>
+  <div id="container"></div>
 
-<div id="play_overlay"><div class="pbutton" id="play_button">Start</div></div>
-
-
-
-<div id="loading">Loading...</div>
+  <div id="play_overlay">
+    <div class="pbutton" id="play_button">Start</div>
+  </div>
 
 
 
+  <div id="loading">Loading...</div>
 
 
-<script src="js/ThreeTerrain.js"></script>
 
-<script src="js/Detector.js"></script>
-<script src="js/RequestAnimationFrame.js"></script>
-<script src="js/Stats.js"></script>
 
-<script src="js/ShaderTerrain.js"></script>
-<script src="js/ShaderExtrasTerrain.js"></script>
 
-<script src="js/PostprocessingTerrain.js"></script>
+  <script src="js/ThreeTerrain.js"></script>
 
-<script id="fragmentShaderNoise" type="x-shader/x-fragment">
+  <script src="js/Detector.js"></script>
+  <script src="js/RequestAnimationFrame.js"></script>
+  <script src="js/Stats.js"></script>
+
+  <script src="js/ShaderTerrain.js"></script>
+  <script src="js/ShaderExtrasTerrain.js"></script>
+
+  <script src="js/PostprocessingTerrain.js"></script>
+
+  <script id="fragmentShaderNoise" type="x-shader/x-fragment">
 
 			//
 			// Description : Array and textureless GLSL 3D simplex noise function.
@@ -203,7 +231,7 @@
 
 		</script>
 
-<script id="vertexShader" type="x-shader/x-vertex">
+  <script id="vertexShader" type="x-shader/x-vertex">
 
 			varying vec2 vUv;
 			uniform vec2 scale;
@@ -218,23 +246,23 @@
 
 		</script>
 
-<script>
+  <script>
 
     if (!Detector.webgl) {
-  Detector.addGetWebGLMessage();
-}
+      Detector.addGetWebGLMessage();
+    }
 
     const buttonElement = document.getElementById('play_button');
     const buttonOverlayElement = document.getElementById('play_overlay');
     let playButtonVisible = false;
 
     const isMobile = !!(navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i));
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i));
 
     const isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') >= 0;
     const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') >= 0 && !isChrome;
@@ -246,35 +274,35 @@
     let SCREEN_HEIGHT = window.innerHeight - 2 * MARGIN;
 
     let renderer; let container; let
-  stats;
+      stats;
 
     let camera; let
-  scene;
+      scene;
     let cameraOrtho; let
-  sceneRenderTarget;
+      sceneRenderTarget;
 
     let uniformsNoise; let uniformsNormal;
     let heightMap; let normalMap;
     let quadTarget;
 
     let spotLight; let
-  pointLight;
+      pointLight;
 
     let terrain;
 
     let textureCounter = 0;
 
     let animDelta = 0; let
-  animDeltaDir = -1;
+      animDeltaDir = -1;
     let lightVal = 0; let
-  lightDir = 1;
+      lightDir = 1;
     let soundVal = 0; let oldSoundVal = 0; let
-  soundDir = 1;
+      soundDir = 1;
 
     const clock = new THREE.Clock();
 
     let morph; const
-  morphs = [];
+      morphs = [];
 
     const updateNoise = true;
 
@@ -348,7 +376,7 @@
       const normalShader = THREE.ShaderExtras.normalmap;
 
       const rx = 256; const
-    ry = 256;
+        ry = 256;
       const pars = { minFilter: THREE.LinearMipmapLinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat };
 
       heightMap = new THREE.WebGLRenderTarget(rx, ry, pars);
@@ -377,7 +405,7 @@
       var diffuseTexture1 = THREE.ImageUtils.loadTexture('img/grasslight-big.jpg', null, () => {
         loadTextures();
         applyShader(THREE.ShaderExtras.luminosity, diffuseTexture1, specularMap);
-    });
+      });
 
       const diffuseTexture2 = THREE.ImageUtils.loadTexture('img/backgrounddetailed6.jpg', null, loadTextures);
       const detailTexture = THREE.ImageUtils.loadTexture('img/grasslight-big-nm.jpg', null, loadTextures);
@@ -418,9 +446,9 @@
       uniformsTerrain.uRepeatOverlay.value.set(6, 6);
 
       const params = [
-        ['heightmap', 	document.getElementById('fragmentShaderNoise').textContent, 	vertexShader, uniformsNoise, false],
-        ['normal', 	normalShader.fragmentShader, normalShader.vertexShader, uniformsNormal, false],
-        ['terrain', 	terrainShader.fragmentShader, terrainShader.vertexShader, uniformsTerrain, true],
+        ['heightmap', document.getElementById('fragmentShaderNoise').textContent, vertexShader, uniformsNoise, false],
+        ['normal', normalShader.fragmentShader, normalShader.vertexShader, uniformsNormal, false],
+        ['terrain', terrainShader.fragmentShader, terrainShader.vertexShader, uniformsTerrain, true],
       ];
 
       for (let i = 0; i < params.length; i++) {
@@ -476,14 +504,14 @@
 
       // STATS
 
-  /*        stats = new Stats();
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.top = '0px';
-        container.appendChild( stats.domElement );
-
-        stats.domElement.children[ 0 ].children[ 0 ].style.color = "#aaa";
-        stats.domElement.children[ 0 ].style.background = "transparent";
-        stats.domElement.children[ 0 ].children[ 1 ].style.display = "none"; */
+      /*        stats = new Stats();
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.top = '0px';
+            container.appendChild( stats.domElement );
+    
+            stats.domElement.children[ 0 ].children[ 0 ].style.color = "#aaa";
+            stats.domElement.children[ 0 ].style.background = "transparent";
+            stats.domElement.children[ 0 ].children[ 1 ].style.display = "none"; */
 
       // EVENTS
 
@@ -499,8 +527,8 @@
       renderer.autoClear = false;
 
       renderTargetParameters = {
-    minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat, stencilBufer: false,
-  };
+        minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat, stencilBufer: false,
+      };
       renderTarget = new THREE.WebGLRenderTarget(SCREEN_WIDTH, SCREEN_HEIGHT, renderTargetParameters);
 
       effectBloom = new THREE.BloomPass(0.6);
@@ -580,18 +608,18 @@
         addMorph(geometry, 250, 500, startX - Math.random() * 500, 500, 1000);
         addMorph(geometry, 250, 500, startX - Math.random() * 500, 500, -1000);
         addMorph(geometry, 250, 500, startX - Math.random() * 500, 500, -500);
-    });
+      });
 
       loader.load('js/flamingo.js', (geometry) => {
         morphColorsToFaceColors(geometry);
         addMorph(geometry, 500, 1000, startX - Math.random() * 500, 350, 40);
-    });
+      });
 
       loader.load('js/stork.js', (geometry) => {
         morphColorsToFaceColors(geometry);
         addMorph(geometry, 350, 1000, startX - Math.random() * 500, 350, 340);
         addMorph(geometry, 350, 1000, startX - Math.random() * 500, 350, -340);
-    });
+      });
 
       // PRE-INIT
 
@@ -604,11 +632,11 @@
         soundtrack.play();
 
         hideButton();
-    }, false);
+      }, false);
 
       if (isIOS) {
-    showButton();
-  }
+        showButton();
+      }
       centerButton();
     }
 
@@ -634,7 +662,7 @@
           console.log('[autoPlay started]');
 
           hideButton();
-    }).catch((error) => {
+        }).catch((error) => {
           // Autoplay was prevented.
           // Show a "Play" button so that user can start playback.
 
@@ -642,7 +670,7 @@
 
           showButton();
           centerButton();
-    });
+        });
       }
     }
 
@@ -690,9 +718,9 @@
       }
     }
 
-//
+    //
 
-function applyShader(shader, texture, target) {
+    function applyShader(shader, texture, target) {
       const shaderMaterial = new THREE.ShaderMaterial({
 
         fragmentShader: shader.fragmentShader,
@@ -712,12 +740,12 @@ function applyShader(shader, texture, target) {
       renderer.render(sceneTmp, cameraOrtho, target, true);
     }
 
-//
+    //
 
-function loadTextures() {
+    function loadTextures() {
       textureCounter += 1;
 
-      if (textureCounter == 3)	{
+      if (textureCounter == 3) {
         terrain.visible = true;
 
         document.getElementById('loading').style.display = 'none';
@@ -803,7 +831,8 @@ function loadTextures() {
       }
     }
 
-</script>
+  </script>
 
 </body>
+
 </html>

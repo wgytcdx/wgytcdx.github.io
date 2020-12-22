@@ -207,10 +207,7 @@
         if (c.light || !light) {
           const s = c.light ? this.parent.light : 1;
           // ---- rgba color ----
-          light = `rgba(${
-            Math.round(c.r * s)},${
-            Math.round(c.g * s)},${
-            Math.round(c.b * s)},${c.a || 1})`;
+          light = `rgba(${Math.round(c.r * s)},${Math.round(c.g * s)},${Math.round(c.b * s)},${c.a || 1})`;
           ctx.fillStyle = light;
         }
         // ---- paint poly ----

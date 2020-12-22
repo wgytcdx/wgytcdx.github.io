@@ -1,24 +1,24 @@
 const songs = [
   {
     name: 'LOSER',
-	    singer: '郑小宇',
-	    album: 'LOSER',
-	    url: 'src/郑小宇%20-%20LOSER.mp3',
+    singer: '郑小宇',
+    album: 'LOSER',
+    url: 'src/郑小宇%20-%20LOSER.mp3',
     picture: 'imgs/7.jpg',
   },
   {
-	    name: '葫芦葫芦瓢',
-	    singer: '1022女生',
-	    album: '天天向上集锦',
-	    url: 'src/胡撸胡撸瓢儿.mp3',
-	    picture: 'imgs/8.jpg',
+    name: '葫芦葫芦瓢',
+    singer: '1022女生',
+    album: '天天向上集锦',
+    url: 'src/胡撸胡撸瓢儿.mp3',
+    picture: 'imgs/8.jpg',
   },
   {
-	    name: '半岛铁盒',
-	    singer: '刘瑞琦',
-	    album: '再见周杰伦',
-	    url: 'src/刘瑞琦%20-%20半岛铁盒.mp3',
-	    picture: 'imgs/9.jpg',
+    name: '半岛铁盒',
+    singer: '刘瑞琦',
+    album: '再见周杰伦',
+    url: 'src/刘瑞琦%20-%20半岛铁盒.mp3',
+    picture: 'imgs/9.jpg',
   },
 ];
 const myAudio = $('audio')[0];
